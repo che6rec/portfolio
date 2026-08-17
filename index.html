@@ -12,7 +12,6 @@
     :root {
       --bg: #080808;
       --card: #111111;
-      --card-hover: #151515;
       --text: #f4f4f4;
       --muted: #888888;
       --line: #1e1e1e;
@@ -38,7 +37,7 @@
     /* Hero */
     .hero { min-height: 85vh; display: flex; align-items: center; padding: 130px 0 70px; }
     .eyebrow { color: #aaa; text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
-    h1 { font-size: clamp(42px, 7.5vw, 92px); line-height: 0.94; letter-spacing: -0.05em; font-weight: 900; max-width: 1050px; text-transform: uppercase; margin-bottom: 24px; }
+    h1 { font-size: clamp(40px, 7.2vw, 88px); line-height: 0.94; letter-spacing: -0.05em; font-weight: 900; max-width: 1050px; text-transform: uppercase; margin-bottom: 24px; }
     .hero p { max-width: 680px; color: #aaa; font-size: clamp(16px, 1.8vw, 19px); margin-bottom: 36px; line-height: 1.55; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border: 1px solid #fff; background: #fff; color: #000; border-radius: 999px; font-weight: 700; font-size: 14px; transition: transform 0.2s, background 0.2s; }
@@ -59,24 +58,80 @@
     .filter-btn.active { background: #fff; color: #000; border-color: #fff; }
 
     /* Works Grid */
-    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .work-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s; position: relative; }
+    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .work-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s; }
     .work-card:hover { border-color: var(--line-hover); transform: translateY(-3px); }
     .work-card.hide { display: none; }
     
-    .media-preview { position: relative; width: 100%; aspect-ratio: 16/9; background: #161616; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .media-preview.vertical { aspect-ratio: 16/10; }
-    .media-tag { position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.04em; z-index: 2; }
-    .placeholder-bg { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #18181b, #09090b); color: #888; font-size: 13px; font-weight: 500; text-align: center; padding: 20px; }
-    .play-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; border: 1px solid rgba(255,255,255,0.15); transition: transform 0.2s, background 0.2s; }
-    .work-card:hover .play-icon { transform: scale(1.1); background: #fff; color: #000; }
+    /* Clickable Channel Banners */
+    .channel-banner { 
+      position: relative; 
+      width: 100%; 
+      aspect-ratio: 16/9; 
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+      padding: 20px; 
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .channel-banner.vertical { aspect-ratio: 16/9.5; }
+    .work-card:hover .channel-banner { filter: brightness(1.08); }
 
+    /* Banner Specific Colors & Styles */
+    .bg-moonqueen {
+      background: radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.45), transparent 50%),
+                  linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #090d16 100%);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    .bg-respawn {
+      background: radial-gradient(circle at 85% 15%, rgba(239, 68, 68, 0.4), transparent 50%),
+                  linear-gradient(135deg, #180d0d 0%, #271212 50%, #09090b 100%);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .bg-rust {
+      background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.4), transparent 50%),
+                  linear-gradient(135deg, #1c1307 0%, #2a1808 50%, #0c0906 100%);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .bg-blender {
+      background: radial-gradient(circle at 85% 15%, rgba(249, 115, 22, 0.4), transparent 50%),
+                  linear-gradient(135deg, #1a100a 0%, #29160d 50%, #0a0705 100%);
+      border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+    }
+    .bg-ai {
+      background: radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.4), transparent 50%),
+                  linear-gradient(135deg, #160b24 0%, #29113d 50%, #0b0711 100%);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    }
+    .bg-insta {
+      background: radial-gradient(circle at 85% 15%, rgba(236, 72, 153, 0.4), transparent 50%),
+                  linear-gradient(135deg, #1f0b18 0%, #350f27 50%, #0e060c 100%);
+      border-bottom: 1px solid rgba(236, 72, 153, 0.2);
+    }
+
+    /* Banner Elements */
+    .banner-top { display: flex; justify-content: space-between; align-items: center; z-index: 2; }
+    .banner-badge { background: rgba(0,0,0,0.65); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
+    .banner-arrow { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; transition: 0.2s; }
+    .work-card:hover .banner-arrow { background: #fff; color: #000; transform: scale(1.1); }
+
+    .banner-center { margin: auto 0; z-index: 2; }
+    .banner-brand-title { font-size: clamp(22px, 3.2vw, 32px); font-weight: 900; letter-spacing: -0.03em; color: #fff; line-height: 1.05; text-transform: uppercase; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .banner-brand-sub { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; }
+
+    .banner-footer { font-size: 11px; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 6px; z-index: 2; font-weight: 500; }
+    .banner-footer span { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+
+    /* Card Content */
     .work-info { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
     .work-info h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
     .work-info p { color: #999; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
     
-    /* Double Action Buttons */
-    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; border-top: 1px solid #1a1a1a; pt-4; padding-top: 16px; }
+    /* Action Buttons */
+    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; border-top: 1px solid #1c1c1c; padding-top: 16px; }
     .btn-action-primary { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #fff; color: #000; border-radius: 8px; font-size: 12px; font-weight: 700; transition: 0.2s; }
     .btn-action-primary:hover { background: #e5e5e5; }
     .btn-action-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #1a1a1a; color: #ccc; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 12px; font-weight: 600; transition: 0.2s; }
@@ -170,13 +225,19 @@
 
       <!-- Case 1: MoonQueenPS -->
       <div class="work-card" data-cat="commercial">
-        <div class="media-preview vertical">
-          <span class="media-tag">Shorts / Коммерция · 400K+ Views</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>MoonQueenPS — Магазин PlayStation</span>
+        <a class="channel-banner bg-moonqueen vertical" href="https://www.youtube.com/@MoonQueenPS/shorts" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Shorts · 400K+ Views</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">MOONQUEEN PS</div>
+            <div class="banner-brand-sub">PlayStation Store Commercial</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Открыть подборку Shorts
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>MoonQueenPS: Вирусные Shorts</h3>
@@ -191,16 +252,22 @@
 
       <!-- Case 2: Media Respawn -->
       <div class="work-card" data-cat="commercial">
-        <div class="media-preview vertical">
-          <span class="media-tag">Личный бренд · Face-to-Camera</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>media.respawn — Игровые новости и софт</span>
+        <a class="channel-banner bg-respawn vertical" href="https://www.youtube.com/@media.respawn/shorts" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Face-to-Camera · Личный бренд</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">MEDIA RESPAWN</div>
+            <div class="banner-brand-sub">Игровые новости & Софт</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Смотреть видеоролики
+          </div>
+        </a>
         <div class="work-info">
           <div>
-            <h3>media.respawn: Новости, фишки и сливы софта</h3>
+            <h3>media.respawn: Новости, фишки и софт</h3>
             <p>Личный канал: съемка в кадре, сценарии и динамичный монтаж про гейминг, лайфхаки и софт.</p>
           </div>
           <div class="card-actions">
@@ -212,13 +279,19 @@
 
       <!-- Case 3: Instagram Reels AI VFX -->
       <div class="work-card" data-cat="ai">
-        <div class="media-preview vertical">
-          <span class="media-tag">Instagram Reel · AI VFX</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Монтаж с нейросетевыми эффектами</span>
+        <a class="channel-banner bg-insta vertical" href="https://www.instagram.com/reel/Dbc071LIKvC/" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Instagram Reel · AI VFX</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">AI REELS VFX</div>
+            <div class="banner-brand-sub">Нейросетевые эффекты</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Открыть Reel в Instagram
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>Reel с AI-эффектами и трансформациями</h3>
@@ -233,13 +306,19 @@
 
       <!-- Case 4: Magic Rust (3D Shorts) -->
       <div class="work-card" data-cat="gaming">
-        <div class="media-preview vertical">
-          <span class="media-tag">3D Shorts · Gaming</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>MAGIC RUST — 3D Shorts</span>
+        <a class="channel-banner bg-rust vertical" href="https://www.youtube.com/@MAGICRUST/shorts" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">3D Shorts · Gaming</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">MAGIC RUST</div>
+            <div class="banner-brand-sub">3D-Анимации персонажей</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Смотреть 3D Shorts
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>MAGIC RUST: 3D-анимации для Shorts</h3>
@@ -254,13 +333,19 @@
 
       <!-- Case 5: Mirage Rust -->
       <div class="work-card" data-cat="gaming">
-        <div class="media-preview">
-          <span class="media-tag">Gaming Project · Rust</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>MIRAGE RUST — Серверный продакшн</span>
+        <a class="channel-banner bg-rust" href="https://www.youtube.com/@MIRAGERUST/videos" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Gaming Project · Rust</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">MIRAGE RUST</div>
+            <div class="banner-brand-sub">Серверный видеопродакшн</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Смотреть видео на канале
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>MIRAGE RUST: Видеопродакшн проекта</h3>
@@ -275,13 +360,19 @@
 
       <!-- Case 6: Chebr Rust -->
       <div class="work-card" data-cat="gaming">
-        <div class="media-preview">
-          <span class="media-tag">Gaming & Memes · Rust</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>CHEBRRUST — Летсплеи и мемы</span>
+        <a class="channel-banner bg-rust" href="https://www.youtube.com/@CHEBRRUST/videos" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Gaming & Memes · Rust</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">CHEBRRUST</div>
+            <div class="banner-brand-sub">Летсплеи & Анимации</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Смотреть контент
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>CHEBRRUST: Игровой канал по Rust</h3>
@@ -296,13 +387,19 @@
 
       <!-- Case 7: 3D Blender Animation 1 -->
       <div class="work-card" data-cat="3d">
-        <div class="media-preview">
-          <span class="media-tag">3D Animation · Blender</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Blender: Полная сцена #1</span>
+        <a class="channel-banner bg-blender" href="https://disk.yandex.ru/i/cqygzk8G4Y65PQ" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Blender 3D Animation</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">3D SCENE #1</div>
+            <div class="banner-brand-sub">Full Blender Pipeline</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Открыть видео (Яндекс Диск)
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>3D-Сцена и анимация персонажей #1</h3>
@@ -316,13 +413,19 @@
 
       <!-- Case 8: 3D Blender Animation 2 -->
       <div class="work-card" data-cat="3d">
-        <div class="media-preview">
-          <span class="media-tag">3D Animation · Blender</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Blender: Синематик #2</span>
+        <a class="channel-banner bg-blender" href="https://disk.yandex.ru/i/l91MiwSNO3FPRg" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Blender 3D Cinematic</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">CINEMATIC 3D #2</div>
+            <div class="banner-brand-sub">Окружение & Свет</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Открыть видео (Яндекс Диск)
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>3D-Анимация в Blender #2</h3>
@@ -336,13 +439,19 @@
 
       <!-- Case 9: Hybrid Blender + AI -->
       <div class="work-card" data-cat="ai">
-        <div class="media-preview">
-          <span class="media-tag">Hybrid: Blender + AI Pipeline</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>3D База + Нейро-стилизация</span>
+        <a class="channel-banner bg-ai" href="https://disk.yandex.ru/i/ZgFt4v5v6fqGNA" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">Hybrid: Blender + AI</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">3D + AI RENDER</div>
+            <div class="banner-brand-sub">Гибридная генерация</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Открыть видео (Яндекс Диск)
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>Гибридный пайплайн: Blender + AI</h3>
@@ -356,13 +465,19 @@
 
       <!-- Case 10: Pure AI Video -->
       <div class="work-card" data-cat="ai">
-        <div class="media-preview">
-          <span class="media-tag">AI Video Generation</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Чистая генерация в AI</span>
+        <a class="channel-banner bg-ai" href="https://disk.yandex.ru/i/q8pK6zSv2uxOLQ" target="_blank">
+          <div class="banner-top">
+            <span class="banner-badge">AI Video Generation</span>
+            <div class="banner-arrow">↗</div>
           </div>
-        </div>
+          <div class="banner-center">
+            <div class="banner-brand-title">AI CREATIVE GEN</div>
+            <div class="banner-brand-sub">Нейросетевой продакшн</div>
+          </div>
+          <div class="banner-footer">
+            <span></span> Открыть видео (Яндекс Диск)
+          </div>
+        </a>
         <div class="work-info">
           <div>
             <h3>Генеративный AI-видеоролик</h3>
