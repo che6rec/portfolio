@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nasrula — Video Editor · 3D Animator · AI Creator</title>
-  <meta name="description" content="Портфолио Насрулы — вирусный монтаж, озвучка, 3D анимация в Blender, AI-контент и игровые проекты.">
+  <title>Portfolio — Video Editor · 3D Animator · AI Creator</title>
+  <meta name="description" content="Портфолио — вирусный монтаж, озвучка, 3D анимация в Blender, AI-контент и игровые проекты.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,13 +12,12 @@
     :root {
       --bg: #080808;
       --card: #111111;
-      --card-hover: #161616;
+      --card-hover: #151515;
       --text: #f4f4f4;
       --muted: #888888;
       --line: #1e1e1e;
       --line-hover: #333333;
       --accent: #6366f1;
-      --accent-glow: rgba(99, 102, 241, 0.15);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -29,7 +28,7 @@
     /* Navigation */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(8,8,8,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
     nav .inner { height: 70px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: 900; letter-spacing: -0.04em; font-size: 19px; display: flex; align-items: center; gap: 8px; }
+    .logo { font-weight: 900; letter-spacing: -0.03em; font-size: 17px; display: flex; align-items: center; gap: 8px; }
     .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
     .links { display: flex; gap: 24px; color: var(--muted); font-size: 14px; font-weight: 500; }
     .links a:hover { color: var(--text); }
@@ -37,10 +36,9 @@
     .nav-btn:hover { background: #262626; color: #fff; border-color: #444; }
 
     /* Hero */
-    .hero { min-height: 88vh; display: flex; align-items: center; padding: 130px 0 70px; }
-    .eyebrow { color: #aaa; text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; font-weight: 600; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 6px; }
+    .hero { min-height: 85vh; display: flex; align-items: center; padding: 130px 0 70px; }
+    .eyebrow { color: #aaa; text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
     h1 { font-size: clamp(42px, 7.5vw, 92px); line-height: 0.94; letter-spacing: -0.05em; font-weight: 900; max-width: 1050px; text-transform: uppercase; margin-bottom: 24px; }
-    h1 span { color: #fff; -webkit-text-stroke: 1px rgba(255,255,255,0.4); text-shadow: 0 0 30px var(--accent-glow); }
     .hero p { max-width: 680px; color: #aaa; font-size: clamp(16px, 1.8vw, 19px); margin-bottom: 36px; line-height: 1.55; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border: 1px solid #fff; background: #fff; color: #000; border-radius: 999px; font-weight: 700; font-size: 14px; transition: transform 0.2s, background 0.2s; }
@@ -54,7 +52,7 @@
     .section-title { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; }
     .section-subtitle { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.03em; }
 
-    /* Filter Buttons */
+    /* Filters */
     .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
     .filter-btn { background: #111; border: 1px solid var(--line); color: var(--muted); padding: 9px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
     .filter-btn:hover { color: #fff; border-color: #333; }
@@ -68,24 +66,21 @@
     
     .media-preview { position: relative; width: 100%; aspect-ratio: 16/9; background: #161616; overflow: hidden; display: flex; align-items: center; justify-content: center; }
     .media-preview.vertical { aspect-ratio: 16/10; }
-    .media-tag { position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.04em; z-index: 2; }
-    .media-preview .placeholder-bg { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #18181b, #09090b); color: #888; font-size: 13px; font-weight: 500; text-align: center; padding: 20px; }
-    .play-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; border: 1px solid rgba(255,255,255,0.15); transition: transform 0.2s, background 0.2s; }
+    .media-tag { position: absolute; top: 14px; left: 14px; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.04em; z-index: 2; }
+    .placeholder-bg { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #18181b, #09090b); color: #888; font-size: 13px; font-weight: 500; text-align: center; padding: 20px; }
+    .play-icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; border: 1px solid rgba(255,255,255,0.15); transition: transform 0.2s, background 0.2s; }
     .work-card:hover .play-icon { transform: scale(1.1); background: #fff; color: #000; }
 
     .work-info { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
     .work-info h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
-    .work-info p { color: #999; font-size: 14px; line-height: 1.5; margin-bottom: 18px; }
-    .work-link-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; width: fit-content; }
-    .work-link-btn:hover { border-color: #fff; }
-
-    /* Channels Showcase */
-    .channels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
-    .channel-card { background: #0c0c0c; border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.2s; }
-    .channel-card:hover { border-color: #333; }
-    .channel-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-    .channel-card p { font-size: 13px; color: #888; margin-bottom: 16px; line-height: 1.4; }
-    .channel-badge { display: inline-block; font-size: 11px; font-weight: 700; color: #a1a1aa; background: #18181b; padding: 4px 10px; border-radius: 6px; margin-bottom: 12px; width: fit-content; }
+    .work-info p { color: #999; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+    
+    /* Double Action Buttons */
+    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; border-top: 1px solid #1a1a1a; pt-4; padding-top: 16px; }
+    .btn-action-primary { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #fff; color: #000; border-radius: 8px; font-size: 12px; font-weight: 700; transition: 0.2s; }
+    .btn-action-primary:hover { background: #e5e5e5; }
+    .btn-action-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #1a1a1a; color: #ccc; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 12px; font-weight: 600; transition: 0.2s; }
+    .btn-action-secondary:hover { background: #262626; color: #fff; border-color: #444; }
 
     /* Skills Grid */
     .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -118,7 +113,7 @@
     @media(max-width: 900px) {
       .links { display: none; }
       .wrap { width: min(100% - 32px, 1160px); }
-      .works-grid, .about, .channels-grid { grid-template-columns: 1fr; }
+      .works-grid, .about { grid-template-columns: 1fr; }
       .skills { grid-template-columns: repeat(2, 1fr); }
       .hero { min-height: 80vh; padding: 110px 0 50px; }
       .btn { width: 100%; margin-bottom: 8px; }
@@ -130,10 +125,9 @@
 <!-- Navigation -->
 <nav>
   <div class="wrap inner">
-    <div class="logo"><span class="logo-dot"></span> NASRULA.</div>
+    <div class="logo"><span class="logo-dot"></span> PORTFOLIO.</div>
     <div class="links">
-      <a href="#works">Работы</a>
-      <a href="#channels">Каналы</a>
+      <a href="#works">Работы и каналы</a>
       <a href="#skills">Специализация</a>
       <a href="#about">Обо мне</a>
       <a href="#contact">Контакты</a>
@@ -146,8 +140,8 @@
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Video Editor · 3D Animator · AI Content Creator</div>
-    <h1>Монтирую видео,<br>которые набирают <span>просмотры</span>.</h1>
-    <p>Полный цикл видеопродакшна: написание сценариев с высоким удержанием, озвучка, динамичный монтаж, 3D-анимация персонажей в Blender и сложные нейросетевые AI-пайплайны.</p>
+    <h1>Монтирую видео,<br>которые набирают просмотры.</h1>
+    <p>Полный цикл продакшна: сценарии с высоким удержанием, озвучка, динамичный монтаж, 3D-анимация персонажей в Blender и сложные нейросетевые AI-пайплайны.</p>
     <div class="hero-actions">
       <a class="btn" href="#works">Смотреть кейсы</a>
       <a class="btn ghost" href="#contact">Связаться в Telegram</a>
@@ -159,8 +153,8 @@
 <section id="works">
   <div class="wrap">
     <div class="section-header">
-      <div class="section-title">01 / Избранные работы</div>
-      <div class="section-subtitle">Кейсы и проекты</div>
+      <div class="section-title">01 / Проекты и видеокейсы</div>
+      <div class="section-subtitle">Работы с каналов и продакшн</div>
     </div>
 
     <!-- Category Filters -->
@@ -186,9 +180,12 @@
         <div class="work-info">
           <div>
             <h3>MoonQueenPS: Вирусные Shorts</h3>
-            <p><strong>Роль:</strong> Сценарий, съемка, озвучка и монтаж. Ролики собирают от 400 000+ просмотров и привлекают прямых клиентов в магазин.</p>
+            <p>Сценарий, съемка, озвучка и монтаж. Ролики собирают от 400 000+ просмотров и привлекают прямых клиентов в магазин игр.</p>
           </div>
-          <a class="work-link-btn" href="https://www.youtube.com/@MoonQueenPS" target="_blank">Смотреть канал @MoonQueenPS ↗</a>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://www.youtube.com/@MoonQueenPS/shorts" target="_blank">▶ Лучшие Shorts</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@MoonQueenPS" target="_blank">Весь канал ↗</a>
+          </div>
         </div>
       </div>
 
@@ -198,145 +195,43 @@
           <span class="media-tag">Личный бренд · Face-to-Camera</span>
           <div class="placeholder-bg">
             <div class="play-icon">▶</div>
-            <span>media.respawn — Игровой контент</span>
+            <span>media.respawn — Игровые новости и софт</span>
           </div>
         </div>
         <div class="work-info">
           <div>
-            <h3>media.respawn: Новости, фишки и софт</h3>
-            <p><strong>Роль:</strong> Автор, ведущий в кадре, сценарист и монтажер. Игровые инсайды, лайфхаки и динамичный монтаж с плотным ритмом.</p>
+            <h3>media.respawn: Новости, фишки и сливы софта</h3>
+            <p>Личный канал: съемка в кадре, сценарии и динамичный монтаж про гейминг, лайфхаки и софт.</p>
           </div>
-          <a class="work-link-btn" href="https://www.youtube.com/@media.respawn" target="_blank">Смотреть канал @media.respawn ↗</a>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://www.youtube.com/@media.respawn/shorts" target="_blank">▶ Смотреть видео</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@media.respawn" target="_blank">Весь канал ↗</a>
+          </div>
         </div>
       </div>
 
-      <!-- Case 3: 3D Blender Animation 1 -->
-      <div class="work-card" data-cat="3d">
-        <div class="media-preview">
-          <span class="media-tag">3D Animation · Blender</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Blender: Полная 3D-анимация</span>
-          </div>
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>3D-Сцена и анимация персонажей #1</h3>
-            <p><strong>Роль:</strong> Полный цикл 3D в Blender — постановка света, риггинг, анимация камеры и персонажей, финальный рендер и саунд-дизайн.</p>
-          </div>
-          <a class="work-link-btn" href="https://disk.yandex.ru/i/cqygzk8G4Y65PQ" target="_blank">Открыть видео (Яндекс Диск) ↗</a>
-        </div>
-      </div>
-
-      <!-- Case 4: 3D Blender Animation 2 -->
-      <div class="work-card" data-cat="3d">
-        <div class="media-preview">
-          <span class="media-tag">3D Animation · Blender</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Blender: Синематик анимация</span>
-          </div>
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>3D-Анимация в Blender #2</h3>
-            <p><strong>Роль:</strong> Работа со сложной геометрией, окружением, кинематографичной динамикой и визуальными эффектами.</p>
-          </div>
-          <a class="work-link-btn" href="https://disk.yandex.ru/i/l91MiwSNO3FPRg" target="_blank">Открыть видео (Яндекс Диск) ↗</a>
-        </div>
-      </div>
-
-      <!-- Case 5: 3D Blender + AI Pipeline -->
-      <div class="work-card" data-cat="ai">
-        <div class="media-preview">
-          <span class="media-tag">Hybrid: Blender + AI Pipeline</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>3D База + Нейросетевой рендер</span>
-          </div>
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>Гибридный пайплайн: 3D Blender + AI</h3>
-            <p><strong>Роль:</strong> Создание базовой физики и сцены в Blender с последующей генеративной стилизацией и постобработкой через AI.</p>
-          </div>
-          <a class="work-link-btn" href="https://disk.yandex.ru/i/ZgFt4v5v6fqGNA" target="_blank">Открыть видео (Яндекс Диск) ↗</a>
-        </div>
-      </div>
-
-      <!-- Case 6: Pure AI Video -->
-      <div class="work-card" data-cat="ai">
-        <div class="media-preview">
-          <span class="media-tag">AI Video Generation</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>Полная генерация в нейросетях</span>
-          </div>
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>Генеративный AI-видеоролик</h3>
-            <p><strong>Роль:</strong> Промптинг, генерация кадров, контроль движения камеры и физики, чистка артефактов и апскейл видеоряда.</p>
-          </div>
-          <a class="work-link-btn" href="https://disk.yandex.ru/i/q8pK6zSv2uxOLQ" target="_blank">Открыть видео (Яндекс Диск) ↗</a>
-        </div>
-      </div>
-
-      <!-- Case 7: Instagram AI VFX Reel -->
+      <!-- Case 3: Instagram Reels AI VFX -->
       <div class="work-card" data-cat="ai">
         <div class="media-preview vertical">
           <span class="media-tag">Instagram Reel · AI VFX</span>
           <div class="placeholder-bg">
             <div class="play-icon">▶</div>
-            <span>Монтаж с AI-эффектами</span>
+            <span>Монтаж с нейросетевыми эффектами</span>
           </div>
         </div>
         <div class="work-info">
           <div>
-            <h3>Reels с интеграцией нейросетевых эффектов</h3>
-            <p><strong>Роль:</strong> Динамичный вертикальный монтаж с внедрением сложных визуальных AI-трансформаций и эффектов.</p>
+            <h3>Reel с AI-эффектами и трансформациями</h3>
+            <p>Динамичный вертикальный монтаж с внедрением сложных визуальных нейросетевых эффектов.</p>
           </div>
-          <a class="work-link-btn" href="https://www.instagram.com/reel/Dbc071LIKvC/" target="_blank">Смотреть Reel в Instagram ↗</a>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://www.instagram.com/reel/Dbc071LIKvC/" target="_blank">▶ Смотреть этот Reel</a>
+            <a class="btn-action-secondary" href="https://www.instagram.com/che6rec/" target="_blank">Все видео в Instagram ↗</a>
+          </div>
         </div>
       </div>
 
-      <!-- Case 8: 3D Blender Animation 3 -->
-      <div class="work-card" data-cat="3d">
-        <div class="media-preview">
-          <span class="media-tag">3D Animation · Blender</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>3D Сцена в Blender</span>
-          </div>
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>3D-Анимационный проект #3</h3>
-            <p><strong>Роль:</strong> Создание и сборка трехмерной анимации с нуля в Blender.</p>
-          </div>
-          <a class="work-link-btn" href="https://disk.yandex.ru/i/8OI0k6rxzO9Q9A" target="_blank">Открыть видео (Яндекс Диск) ↗</a>
-        </div>
-      </div>
-
-      <!-- Case 9: Mirage Rust -->
-      <div class="work-card" data-cat="gaming">
-        <div class="media-preview">
-          <span class="media-tag">Gaming Project · Rust</span>
-          <div class="placeholder-bg">
-            <div class="play-icon">▶</div>
-            <span>MIRAGE RUST — Серверный проект</span>
-          </div>
-        </div>
-        <div class="work-info">
-          <div>
-            <h3>MIRAGE RUST: Видеопродакшн проекта</h3>
-            <p><strong>Роль:</strong> Сценарии, съемка контента на серверах, озвучка и финальный монтаж для привлечения игроков.</p>
-          </div>
-          <a class="work-link-btn" href="https://www.youtube.com/@MIRAGERUST" target="_blank">Смотреть канал @MIRAGERUST ↗</a>
-        </div>
-      </div>
-
-      <!-- Case 10: Magic Rust (3D Shorts) -->
+      <!-- Case 4: Magic Rust (3D Shorts) -->
       <div class="work-card" data-cat="gaming">
         <div class="media-preview vertical">
           <span class="media-tag">3D Shorts · Gaming</span>
@@ -348,78 +243,137 @@
         <div class="work-info">
           <div>
             <h3>MAGIC RUST: 3D-анимации для Shorts</h3>
-            <p><strong>Роль:</strong> Создание кастомных 3D-анимаций в сеттинге игры для вирусных коротких видеороликов.</p>
+            <p>Разработка и рендер кастомных 3D-анимаций в Blender под вертикальные форматы для серверного проекта.</p>
           </div>
-          <a class="work-link-btn" href="https://www.youtube.com/@MAGICRUST" target="_blank">Смотреть канал @MAGICRUST ↗</a>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://www.youtube.com/@MAGICRUST/shorts" target="_blank">▶ Смотреть 3D Shorts</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@MAGICRUST" target="_blank">Весь канал ↗</a>
+          </div>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- Channels Showcase -->
-<section id="channels">
-  <div class="wrap">
-    <div class="section-header">
-      <div class="section-title">02 / Проекты и Каналы</div>
-      <div class="section-subtitle">Где я регулярно создаю контент</div>
-    </div>
-
-    <div class="channels-grid">
-      <div class="channel-card">
-        <div>
-          <span class="channel-badge">Личный канал</span>
-          <h4>media.respawn</h4>
-          <p>Новости гейминга, фишки, лайфхаки, софт. Съемка в кадре + монтаж.</p>
+      <!-- Case 5: Mirage Rust -->
+      <div class="work-card" data-cat="gaming">
+        <div class="media-preview">
+          <span class="media-tag">Gaming Project · Rust</span>
+          <div class="placeholder-bg">
+            <div class="play-icon">▶</div>
+            <span>MIRAGE RUST — Серверный продакшн</span>
+          </div>
         </div>
-        <a class="work-link-btn" href="https://www.youtube.com/@media.respawn" target="_blank">YouTube @media.respawn ↗</a>
+        <div class="work-info">
+          <div>
+            <h3>MIRAGE RUST: Видеопродакшн проекта</h3>
+            <p>Сценарии, съемка на серверах, озвучка и финальный монтаж для привлечения онлайна.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://www.youtube.com/@MIRAGERUST/videos" target="_blank">▶ Смотреть видео</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@MIRAGERUST" target="_blank">Весь канал ↗</a>
+          </div>
+        </div>
       </div>
 
-      <div class="channel-card">
-        <div>
-          <span class="channel-badge">Коммерция</span>
-          <h4>MoonQueenPS</h4>
-          <p>Shorts для магазина игр PlayStation с удержанием и 400K+ просмотров.</p>
+      <!-- Case 6: Chebr Rust -->
+      <div class="work-card" data-cat="gaming">
+        <div class="media-preview">
+          <span class="media-tag">Gaming & Memes · Rust</span>
+          <div class="placeholder-bg">
+            <div class="play-icon">▶</div>
+            <span>CHEBRRUST — Летсплеи и мемы</span>
+          </div>
         </div>
-        <a class="work-link-btn" href="https://www.youtube.com/@MoonQueenPS" target="_blank">YouTube @MoonQueenPS ↗</a>
+        <div class="work-info">
+          <div>
+            <h3>CHEBRRUST: Игровой канал по Rust</h3>
+            <p>Летсплеи, мемы, нарезки рейдов и кастомные 3D-анимации по игре Rust.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://www.youtube.com/@CHEBRRUST/videos" target="_blank">▶ Смотреть видео</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@CHEBRRUST" target="_blank">Весь канал ↗</a>
+          </div>
+        </div>
       </div>
 
-      <div class="channel-card">
-        <div>
-          <span class="channel-badge">Игровой проект</span>
-          <h4>MIRAGE RUST</h4>
-          <p>Сценарии, съемка, озвучка и продакшн видеороликов по игре Rust.</p>
+      <!-- Case 7: 3D Blender Animation 1 -->
+      <div class="work-card" data-cat="3d">
+        <div class="media-preview">
+          <span class="media-tag">3D Animation · Blender</span>
+          <div class="placeholder-bg">
+            <div class="play-icon">▶</div>
+            <span>Blender: Полная сцена #1</span>
+          </div>
         </div>
-        <a class="work-link-btn" href="https://www.youtube.com/@MIRAGERUST" target="_blank">YouTube @MIRAGERUST ↗</a>
+        <div class="work-info">
+          <div>
+            <h3>3D-Сцена и анимация персонажей #1</h3>
+            <p>Свет, риггинг, анимация камеры, персонажей и саунд-дизайн полностью с нуля в Blender.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/cqygzk8G4Y65PQ" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+          </div>
+        </div>
       </div>
 
-      <div class="channel-card">
-        <div>
-          <span class="channel-badge">3D Анимация</span>
-          <h4>MAGIC RUST</h4>
-          <p>Разработка и рендер кастомных 3D-анимаций под вертикальные форматы.</p>
+      <!-- Case 8: 3D Blender Animation 2 -->
+      <div class="work-card" data-cat="3d">
+        <div class="media-preview">
+          <span class="media-tag">3D Animation · Blender</span>
+          <div class="placeholder-bg">
+            <div class="play-icon">▶</div>
+            <span>Blender: Синематик #2</span>
+          </div>
         </div>
-        <a class="work-link-btn" href="https://www.youtube.com/@MAGICRUST" target="_blank">YouTube @MAGICRUST ↗</a>
+        <div class="work-info">
+          <div>
+            <h3>3D-Анимация в Blender #2</h3>
+            <p>Кинематографичная сцена с геометрией, динамикой окружения и проработкой эффектов.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/l91MiwSNO3FPRg" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+          </div>
+        </div>
       </div>
 
-      <div class="channel-card">
-        <div>
-          <span class="channel-badge">Gaming & Memes</span>
-          <h4>CHEBRRUST</h4>
-          <p>Игровой канал по Rust: летсплеи, мемы, нарезки и 3D-анимации.</p>
+      <!-- Case 9: Hybrid Blender + AI -->
+      <div class="work-card" data-cat="ai">
+        <div class="media-preview">
+          <span class="media-tag">Hybrid: Blender + AI Pipeline</span>
+          <div class="placeholder-bg">
+            <div class="play-icon">▶</div>
+            <span>3D База + Нейро-стилизация</span>
+          </div>
         </div>
-        <a class="work-link-btn" href="https://www.youtube.com/@CHEBRRUST" target="_blank">YouTube @CHEBRRUST ↗</a>
+        <div class="work-info">
+          <div>
+            <h3>Гибридный пайплайн: Blender + AI</h3>
+            <p>Создание анимации и физики в Blender с последующей генеративной стилизацией в нейросетях.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/ZgFt4v5v6fqGNA" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+          </div>
+        </div>
       </div>
 
-      <div class="channel-card">
-        <div>
-          <span class="channel-badge">Личный блог & AI</span>
-          <h4>Instagram @che6rec</h4>
-          <p>Креативные рилсы, AI-пайплайны и эксперименты с генеративным видео.</p>
+      <!-- Case 10: Pure AI Video -->
+      <div class="work-card" data-cat="ai">
+        <div class="media-preview">
+          <span class="media-tag">AI Video Generation</span>
+          <div class="placeholder-bg">
+            <div class="play-icon">▶</div>
+            <span>Чистая генерация в AI</span>
+          </div>
         </div>
-        <a class="work-link-btn" href="https://www.instagram.com/che6rec/" target="_blank">Instagram @che6rec ↗</a>
+        <div class="work-info">
+          <div>
+            <h3>Генеративный AI-видеоролик</h3>
+            <p>Промптинг, генерация сцен, контроль движения камеры, апскейл и очистка артефактов.</p>
+          </div>
+          <div class="card-actions">
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/q8pK6zSv2uxOLQ" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -428,8 +382,8 @@
 <section id="skills">
   <div class="wrap">
     <div class="section-header">
-      <div class="section-title">03 / Навыки</div>
-      <div class="section-subtitle">Что входит в мой процесс</div>
+      <div class="section-title">02 / Навыки</div>
+      <div class="section-subtitle">Что входит в мой продакшн</div>
     </div>
     <div class="skills">
       <div class="skill">🎬 Сценарии с хуками (0–3 сек)</div>
@@ -449,11 +403,11 @@
   <div class="wrap about">
     <div>
       <div class="section-header">
-        <div class="section-title">04 / Обо мне</div>
+        <div class="section-title">03 / Обо мне</div>
       </div>
       <h2>Не просто монтаж.<br>Контент под ключ.</h2>
       <p>Я создаю видео, которые удерживают зрителя с первых секунд. Мой подход объединяет режиссуру сценария, работу со звуком, 3D-графику в Blender и передовые AI-инструменты генерации.</p>
-      <p>Веду собственные каналы, поэтому понимаю алгоритмы YouTube, психологию зрителя и знаю, как конвертировать просмотры в подписки и продажи.</p>
+      <p>Веду собственные каналы, поэтому понимаю алгоритмы платформ, психологию зрителя и знаю, как конвертировать просмотры в подписки и продажи.</p>
     </div>
     <div class="stats">
       <div class="stat"><b>400K+</b><span>просмотров на вирусных Shorts</span></div>
@@ -467,7 +421,7 @@
 <section>
   <div class="wrap">
     <div class="section-header">
-      <div class="section-title">05 / Инструменты</div>
+      <div class="section-title">04 / Инструменты</div>
     </div>
     <div class="tools">
       <span class="tag">Blender 3D</span>
@@ -489,7 +443,7 @@
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="section-header">
-      <div class="section-title">06 / Контакты</div>
+      <div class="section-title">05 / Контакты</div>
       <h2>Есть проект?<br>Давайте обсудим.</h2>
     </div>
     <p>Открыт к новым проектам, монтажу роликов под ключ, созданию 3D-анимаций и AI-контента.</p>
@@ -504,7 +458,7 @@
 <!-- Footer -->
 <footer>
   <div class="wrap inner">
-    <span>© 2026 NASRULA. Все права защищены.</span>
+    <span>© 2026. Все права защищены.</span>
     <span>Video Production · 3D · AI</span>
   </div>
 </footer>
