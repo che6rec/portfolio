@@ -7,7 +7,7 @@
   <meta name="description" content="Портфолио — видеопродакшн полного цикла, контент-маркетинг, 3D анимация в Blender и AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #09090b;
@@ -36,8 +36,10 @@
     .nav-btn { font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #18181b; border: 1px solid #27272a; transition: 0.2s; }
     .nav-btn:hover { background: #27272a; color: #fff; border-color: #3f3f46; }
 
-    /* Minimalist Hero */
-    .hero { min-height: 68vh; display: flex; align-items: center; padding: 130px 0 50px; }
+    /* Hero Section (2-Column Balanced) */
+    .hero { min-height: 75vh; display: flex; align-items: center; padding: 125px 0 55px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; width: 100%; }
+    
     .hero-badge { 
       display: inline-flex; 
       align-items: center; 
@@ -49,29 +51,63 @@
       color: #a5b4fc; 
       font-size: 12px; 
       font-weight: 600; 
-      margin-bottom: 24px; 
+      margin-bottom: 20px; 
     }
     .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #6366f1; box-shadow: 0 0 8px #6366f1; }
+    
     h1 { 
-      font-size: clamp(32px, 5.2vw, 58px); 
+      font-size: clamp(30px, 4.2vw, 50px); 
       line-height: 1.12; 
       letter-spacing: -0.03em; 
       font-weight: 800; 
-      max-width: 820px; 
       color: #fff;
-      margin-bottom: 20px; 
+      margin-bottom: 18px; 
     }
     h1 span { 
-      background: linear-gradient(135deg, #fff 40%, #a1a1aa 100%); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
+      color: #818cf8;
     }
-    .hero p { max-width: 640px; color: #a1a1aa; font-size: clamp(15px, 1.5vw, 17px); margin-bottom: 32px; line-height: 1.6; }
+    .hero p { color: #a1a1aa; font-size: 15px; margin-bottom: 20px; line-height: 1.6; max-width: 580px; }
+    
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+    .hero-tag-pill { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 8px; background: #141418; border: 1px solid #22222a; color: #d4d4d8; }
+
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid #fff; background: #fff; color: #000; border-radius: 999px; font-weight: 600; font-size: 13.5px; transition: transform 0.2s, background 0.2s; }
     .btn.ghost { background: transparent; color: #fff; border-color: #27272a; }
     .btn:hover { transform: translateY(-2px); }
     .btn.ghost:hover { border-color: #52525b; background: rgba(255,255,255,0.04); }
+
+    /* Production Bento Widget (Right Column) */
+    .hero-bento {
+      background: radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.12), transparent 50%),
+                  linear-gradient(145deg, #131317 0%, #0d0d10 100%);
+      border: 1px solid #22222a;
+      border-radius: 20px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    }
+    .bento-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e1e24; padding-bottom: 12px; }
+    .bento-header-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #a1a1aa; }
+    .bento-live-badge { font-size: 11px; font-weight: 700; color: #22c55e; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.25); padding: 3px 8px; border-radius: 999px; display: flex; align-items: center; gap: 5px; }
+    .bento-live-dot { width: 5px; height: 5px; border-radius: 50%; background: #22c55e; }
+
+    .bento-tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .bento-tool-card { background: #18181e; border: 1px solid #262630; border-radius: 12px; padding: 12px; transition: 0.2s; }
+    .bento-tool-card:hover { border-color: #3e3e4f; background: #1c1c24; }
+    .bento-tool-name { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; display: flex; align-items: center; gap: 6px; }
+    .bento-tool-desc { font-size: 11px; color: #82828e; }
+
+    .bento-timeline-box { background: #0c0c0f; border: 1px solid #1e1e24; border-radius: 12px; padding: 12px; }
+    .bento-timeline-meta { display: flex; justify-content: space-between; font-size: 11px; color: #71717a; margin-bottom: 8px; font-weight: 600; }
+    .bento-tracks { display: flex; flex-direction: column; gap: 5px; }
+    .bento-track { height: 7px; border-radius: 4px; position: relative; overflow: hidden; }
+    .bento-track.v1 { background: #272733; width: 100%; }
+    .bento-track.v1::after { content: ''; position: absolute; left: 0; top: 0; width: 75%; height: 100%; background: #6366f1; border-radius: 4px; }
+    .bento-track.a1 { background: #272733; width: 100%; }
+    .bento-track.a1::after { content: ''; position: absolute; left: 10%; top: 0; width: 80%; height: 100%; background: #10b981; border-radius: 4px; }
 
     /* Section Base */
     section { padding: 75px 0; border-top: 1px solid var(--line); }
@@ -177,16 +213,18 @@
     @media(max-width: 1024px) {
       .works-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media(max-width: 860px) {
+    @media(max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
       .links { display: none; }
       .wrap { width: min(100% - 28px, 1160px); }
       .about { grid-template-columns: 1fr; }
       .skills { grid-template-columns: repeat(2, 1fr); }
-      .hero { min-height: 60vh; padding: 110px 0 40px; }
+      .hero { min-height: auto; padding: 100px 0 40px; }
       .btn { width: 100%; margin-bottom: 6px; }
     }
     @media(max-width: 640px) {
       .works-grid { grid-template-columns: 1fr; }
+      .bento-tools-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -209,18 +247,70 @@
   </div>
 </nav>
 
-<!-- Minimalist Hero -->
+<!-- Hero Section with Bento Stack -->
 <header class="hero">
   <div class="wrap">
-    <div class="hero-badge">
-      <span class="pulse-dot"></span>
-      <span>Video Production · Marketing · 3D & AI</span>
-    </div>
-    <h1>Создаю видео, которые<br><span>привлекают и удерживают.</span></h1>
-    <p>Полный цикл продакшна: сценарии с удержанием 100%+, озвучка, динамичный монтаж, 3D-анимация в Blender и генеративный AI-контент под задачи бизнеса и каналов.</p>
-    <div class="hero-actions">
-      <a class="btn" href="#works">Смотреть работы</a>
-      <a class="btn ghost" href="https://t.me/che6rec" target="_blank">Связаться в Telegram ↗</a>
+    <div class="hero-grid">
+      
+      <!-- Left Column: Title & Offer -->
+      <div>
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Video Production · Marketing · 3D & AI</span>
+        </div>
+        <h1>Создаю видео, которые<br><span>удерживают внимание</span> и растят охваты.</h1>
+        <p>Полный цикл продакшна: сценарии с удержанием 100%+, дикторская озвучка, динамичный монтаж, 3D-анимация в Blender и генеративный AI-контент под задачи бизнеса и каналов.</p>
+        
+        <div class="hero-tags">
+          <span class="hero-tag-pill">🎬 Full-Cycle Продакшн</span>
+          <span class="hero-tag-pill">🧊 3D Blender</span>
+          <span class="hero-tag-pill">🤖 AI-пайплайны</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn" href="#works">Смотреть работы</a>
+          <a class="btn ghost" href="https://t.me/che6rec" target="_blank">Связаться в Telegram ↗</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Production Widget -->
+      <div class="hero-bento">
+        <div class="bento-header">
+          <span class="bento-header-title">Production Stack</span>
+          <span class="bento-live-badge"><span class="bento-live-dot"></span> 4K 60FPS · 9:16 & 16:9</span>
+        </div>
+
+        <div class="bento-tools-grid">
+          <div class="bento-tool-card">
+            <div class="bento-tool-name">🎬 DaVinci Resolve</div>
+            <div class="bento-tool-desc">Монтаж, цвет, Fairlight</div>
+          </div>
+          <div class="bento-tool-card">
+            <div class="bento-tool-name">🧊 Blender 3D</div>
+            <div class="bento-tool-desc">Сцены, риггинг, анимация</div>
+          </div>
+          <div class="bento-tool-card">
+            <div class="bento-tool-name">✨ After Effects</div>
+            <div class="bento-tool-desc">Motion Graphics & VFX</div>
+          </div>
+          <div class="bento-tool-card">
+            <div class="bento-tool-name">🤖 AI Gen Stack</div>
+            <div class="bento-tool-desc">Kling, Higgsfield, Flow</div>
+          </div>
+        </div>
+
+        <div class="bento-timeline-box">
+          <div class="bento-timeline-meta">
+            <span>TIMELINE PREVIEW</span>
+            <span>RETENTION TARGET: 100%+</span>
+          </div>
+          <div class="bento-tracks">
+            <div class="bento-track v1"></div>
+            <div class="bento-track a1"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </header>
@@ -515,8 +605,9 @@
       <span class="tag">After Effects</span>
       <span class="tag">CapCut Pro</span>
       <span class="tag">Kling AI</span>
+      <span class="tag">Higgsfield</span>
       <span class="tag">Google Flow</span>
-      <span class="tag">Hailuo AI</span>
+      <span class="tag">Seedance</span>
       <span class="tag">Runway</span>
       <span class="tag">OBS Studio</span>
       <span class="tag">Photoshop</span>
