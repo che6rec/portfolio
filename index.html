@@ -4,174 +4,189 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio — Video Production · Marketing · 3D & AI</title>
-  <meta name="description" content="Портфолио — контент-маркетинг, вирусный монтаж, озвучка, 3D анимация в Blender, AI-контент и игровые проекты.">
+  <meta name="description" content="Портфолио — видеопродакшн полного цикла, контент-маркетинг, 3D анимация в Blender и AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #080808;
-      --card: #111111;
-      --text: #f4f4f4;
-      --muted: #888888;
-      --line: #1e1e1e;
-      --line-hover: #333333;
+      --bg: #09090b;
+      --card: #121215;
+      --card-hover: #17171c;
+      --text: #f4f4f5;
+      --muted: #82828e;
+      --line: #1e1e24;
+      --line-hover: #2e2e38;
       --accent: #6366f1;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(1160px, calc(100% - 36px)); margin: auto; }
 
     /* Navigation */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(8,8,8,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
-    nav .inner { height: 70px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: 900; letter-spacing: -0.03em; font-size: 17px; display: flex; align-items: center; gap: 8px; }
-    .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .links { display: flex; gap: 24px; color: var(--muted); font-size: 14px; font-weight: 500; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(9,9,11,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+    nav .inner { height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-weight: 800; letter-spacing: -0.02em; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    .logo-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .links { display: flex; gap: 24px; color: var(--muted); font-size: 13.5px; font-weight: 500; }
     .links a:hover { color: var(--text); }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-    .nav-btn { font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 999px; background: #1a1a1a; border: 1px solid #2a2a2a; transition: 0.2s; }
-    .nav-btn:hover { background: #262626; color: #fff; border-color: #444; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-btn { font-size: 12.5px; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: #18181b; border: 1px solid #27272a; transition: 0.2s; }
+    .nav-btn:hover { background: #27272a; color: #fff; border-color: #3f3f46; }
 
-    /* Hero */
-    .hero { min-height: 85vh; display: flex; align-items: center; padding: 130px 0 70px; }
-    .eyebrow { color: #aaa; text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
-    h1 { font-size: clamp(38px, 7vw, 84px); line-height: 0.96; letter-spacing: -0.05em; font-weight: 900; max-width: 1050px; text-transform: uppercase; margin-bottom: 24px; }
-    h1 span { color: #6366f1; }
-    .hero p { max-width: 720px; color: #aaa; font-size: clamp(16px, 1.8vw, 19px); margin-bottom: 36px; line-height: 1.55; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border: 1px solid #fff; background: #fff; color: #000; border-radius: 999px; font-weight: 700; font-size: 14px; transition: transform 0.2s, background 0.2s; }
-    .btn.ghost { background: transparent; color: #fff; border-color: #333; }
+    /* Minimalist Hero */
+    .hero { min-height: 68vh; display: flex; align-items: center; padding: 130px 0 50px; }
+    .hero-badge { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      padding: 6px 14px; 
+      border-radius: 999px; 
+      background: rgba(99, 102, 241, 0.08); 
+      border: 1px solid rgba(99, 102, 241, 0.25); 
+      color: #a5b4fc; 
+      font-size: 12px; 
+      font-weight: 600; 
+      margin-bottom: 24px; 
+    }
+    .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: #6366f1; box-shadow: 0 0 8px #6366f1; }
+    h1 { 
+      font-size: clamp(32px, 5.2vw, 58px); 
+      line-height: 1.12; 
+      letter-spacing: -0.03em; 
+      font-weight: 800; 
+      max-width: 820px; 
+      color: #fff;
+      margin-bottom: 20px; 
+    }
+    h1 span { 
+      background: linear-gradient(135deg, #fff 40%, #a1a1aa 100%); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+    }
+    .hero p { max-width: 640px; color: #a1a1aa; font-size: clamp(15px, 1.5vw, 17px); margin-bottom: 32px; line-height: 1.6; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid #fff; background: #fff; color: #000; border-radius: 999px; font-weight: 600; font-size: 13.5px; transition: transform 0.2s, background 0.2s; }
+    .btn.ghost { background: transparent; color: #fff; border-color: #27272a; }
     .btn:hover { transform: translateY(-2px); }
-    .btn.ghost:hover { border-color: #666; background: rgba(255,255,255,0.05); }
+    .btn.ghost:hover { border-color: #52525b; background: rgba(255,255,255,0.04); }
 
     /* Section Base */
-    section { padding: 90px 0; border-top: 1px solid var(--line); }
-    .section-header { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
-    .section-title { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; }
-    .section-subtitle { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.03em; }
+    section { padding: 75px 0; border-top: 1px solid var(--line); }
+    .section-header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 26px; }
+    .section-title { font-size: 11.5px; color: #71717a; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 700; }
+    .section-subtitle { font-size: clamp(20px, 2.6vw, 28px); font-weight: 800; letter-spacing: -0.02em; }
 
     /* Filters */
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-    .filter-btn { background: #111; border: 1px solid var(--line); color: var(--muted); padding: 9px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.2s; }
-    .filter-btn:hover { color: #fff; border-color: #333; }
+    .filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+    .filter-btn { background: #121215; border: 1px solid var(--line); color: var(--muted); padding: 7px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+    .filter-btn:hover { color: #fff; border-color: #27272a; }
     .filter-btn.active { background: #fff; color: #000; border-color: #fff; }
 
-    /* Works Grid */
-    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .work-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s; }
-    .work-card:hover { border-color: var(--line-hover); transform: translateY(-3px); }
+    /* Works 3-Column Compact Grid */
+    .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .work-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
+    .work-card:hover { border-color: var(--line-hover); transform: translateY(-2px); background: var(--card-hover); }
     .work-card.hide { display: none; }
     
-    /* Clickable Channel Banners */
-    .channel-banner { 
-      position: relative; 
-      width: 100%; 
-      aspect-ratio: 16/9; 
-      overflow: hidden; 
+    /* Compact Banner Header */
+    .card-banner { 
+      height: 105px; 
+      padding: 14px 16px; 
       display: flex; 
       flex-direction: column; 
       justify-content: space-between; 
-      padding: 22px; 
-      cursor: pointer;
-      text-decoration: none;
-      transition: filter 0.3s ease;
+      position: relative; 
+      overflow: hidden; 
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .channel-banner.vertical { aspect-ratio: 16/9.5; }
-    .work-card:hover .channel-banner { filter: brightness(1.1); }
-
-    /* Banner Specific Colors */
+    
     .bg-moonqueen {
-      background: radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.45), transparent 50%),
-                  linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #090d16 100%);
-      border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+      background: radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.35), transparent 60%),
+                  linear-gradient(135deg, #0c1024 0%, #151630 100%);
     }
     .bg-respawn {
-      background: radial-gradient(circle at 85% 15%, rgba(239, 68, 68, 0.4), transparent 50%),
-                  linear-gradient(135deg, #180d0d 0%, #271212 50%, #09090b 100%);
-      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+      background: radial-gradient(circle at 90% 10%, rgba(239, 68, 68, 0.35), transparent 60%),
+                  linear-gradient(135deg, #180d0d 0%, #201214 100%);
     }
     .bg-rust {
-      background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.4), transparent 50%),
-                  linear-gradient(135deg, #1c1307 0%, #2a1808 50%, #0c0906 100%);
-      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      background: radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.3), transparent 60%),
+                  linear-gradient(135deg, #171008 0%, #22170c 100%);
     }
     .bg-blender {
-      background: radial-gradient(circle at 85% 15%, rgba(249, 115, 22, 0.4), transparent 50%),
-                  linear-gradient(135deg, #1a100a 0%, #29160d 50%, #0a0705 100%);
-      border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+      background: radial-gradient(circle at 90% 10%, rgba(249, 115, 22, 0.3), transparent 60%),
+                  linear-gradient(135deg, #180f0a 0%, #22150e 100%);
     }
     .bg-ai {
-      background: radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.4), transparent 50%),
-                  linear-gradient(135deg, #160b24 0%, #29113d 50%, #0b0711 100%);
-      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+      background: radial-gradient(circle at 90% 10%, rgba(168, 85, 247, 0.35), transparent 60%),
+                  linear-gradient(135deg, #140b20 0%, #1f1130 100%);
     }
 
-    /* Banner Elements */
-    .banner-top { display: flex; justify-content: space-between; align-items: center; z-index: 2; }
-    .banner-badge { background: rgba(0,0,0,0.65); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
-    .banner-arrow { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; transition: 0.2s; }
-    .work-card:hover .banner-arrow { background: #fff; color: #000; transform: scale(1.1); }
+    .banner-meta { display: flex; justify-content: space-between; align-items: center; }
+    .banner-badge { background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.1); padding: 4px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 700; color: #e4e4e7; text-transform: uppercase; letter-spacing: 0.04em; }
+    .banner-icon { color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 600; }
+    
+    .banner-title { font-size: 16px; font-weight: 800; letter-spacing: -0.02em; color: #fff; text-transform: uppercase; margin-top: auto; }
+    .banner-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 500; }
 
-    .banner-center { margin: auto 0; z-index: 2; }
-    .banner-brand-title { font-size: clamp(22px, 3.2vw, 32px); font-weight: 900; letter-spacing: -0.03em; color: #fff; line-height: 1.05; text-transform: uppercase; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    .banner-brand-sub { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; }
-
-    .banner-footer { font-size: 11px; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 6px; z-index: 2; font-weight: 500; }
-    .banner-footer span { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
-
-    /* Card Content */
-    .work-info { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
-    .work-info h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
-    .work-info p { color: #999; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+    /* Card Body */
+    .card-body { padding: 16px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; gap: 12px; }
+    .card-body h3 { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.01em; line-height: 1.35; }
+    .card-body p { color: #8e8e99; font-size: 12.5px; line-height: 1.45; }
     
     /* Action Buttons */
-    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; border-top: 1px solid #1c1c1c; padding-top: 16px; }
-    .btn-action-primary { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #fff; color: #000; border-radius: 8px; font-size: 12px; font-weight: 700; transition: 0.2s; }
-    .btn-action-primary:hover { background: #e5e5e5; }
-    .btn-action-secondary { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #1a1a1a; color: #ccc; border: 1px solid #2a2a2a; border-radius: 8px; font-size: 12px; font-weight: 600; transition: 0.2s; }
-    .btn-action-secondary:hover { background: #262626; color: #fff; border-color: #444; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-top: 10px; border-top: 1px solid #1a1a1f; margin-top: auto; }
+    .btn-action-primary { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; background: #fff; color: #000; border-radius: 6px; font-size: 11.5px; font-weight: 700; transition: 0.15s; }
+    .btn-action-primary:hover { background: #e4e4e7; }
+    .btn-action-secondary { display: inline-flex; align-items: center; gap: 4px; padding: 6px 10px; background: #18181b; color: #a1a1aa; border: 1px solid #27272a; border-radius: 6px; font-size: 11.5px; font-weight: 600; transition: 0.15s; }
+    .btn-action-secondary:hover { background: #222227; color: #fff; border-color: #3f3f46; }
 
     /* Skills Grid */
-    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .skill { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: #0c0c0c; color: #ddd; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .skill { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); color: #d4d4d8; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 10px; }
 
     /* About Section */
-    .about { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
-    .about h2, .contact h2 { font-size: clamp(34px, 4.8vw, 64px); line-height: 0.95; letter-spacing: -0.05em; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; }
-    .about p { font-size: 16px; color: #aaa; line-height: 1.6; margin-bottom: 16px; }
-    .stats { display: grid; gap: 14px; }
-    .stat { padding: 20px 24px; background: #0c0c0c; border: 1px solid var(--line); border-radius: 16px; }
-    .stat b { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; color: #fff; }
-    .stat span { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .about { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; }
+    .about h2, .contact h2 { font-size: clamp(26px, 3.5vw, 44px); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 16px; font-weight: 800; color: #fff; }
+    .about p { font-size: 15px; color: #a1a1aa; line-height: 1.6; margin-bottom: 14px; }
+    .stats { display: grid; gap: 10px; }
+    .stat { padding: 16px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+    .stat b { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+    .stat span { display: block; color: var(--muted); font-size: 12px; margin-top: 3px; }
 
     /* Tools */
-    .tools { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag { border: 1px solid var(--line); background: #0d0d0d; padding: 10px 18px; border-radius: 999px; color: #bbb; font-size: 13px; font-weight: 500; }
+    .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { border: 1px solid var(--line); background: #121215; padding: 7px 14px; border-radius: 999px; color: #a1a1aa; font-size: 12px; font-weight: 500; }
 
     /* Contact */
-    .contact { padding: 120px 0; }
-    .contact p { color: var(--muted); font-size: 18px; margin-bottom: 24px; }
+    .contact { padding: 85px 0; }
+    .contact p { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
     .contact-list { display: flex; flex-direction: column; gap: 14px; }
-    .contact-item { display: flex; flex-direction: column; gap: 4px; }
-    .contact-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #666; font-weight: 700; }
-    .contact a.big { font-size: clamp(22px, 4vw, 48px); font-weight: 800; letter-spacing: -0.04em; display: inline-block; border-bottom: 2px solid transparent; transition: 0.2s; width: fit-content; }
+    .contact-item { display: flex; flex-direction: column; gap: 3px; }
+    .contact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; font-weight: 700; }
+    .contact a.big { font-size: clamp(19px, 3vw, 36px); font-weight: 700; letter-spacing: -0.03em; display: inline-block; border-bottom: 2px solid transparent; transition: 0.2s; width: fit-content; }
     .contact a.big:hover { border-color: #fff; }
 
     /* Footer */
-    footer { padding: 32px 0; color: #555; font-size: 13px; border-top: 1px solid var(--line); }
+    footer { padding: 26px 0; color: #52525b; font-size: 12px; border-top: 1px solid var(--line); }
     footer .inner { display: flex; justify-content: space-between; align-items: center; }
 
     /* Responsive */
-    @media(max-width: 900px) {
+    @media(max-width: 1024px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 860px) {
       .links { display: none; }
-      .wrap { width: min(100% - 32px, 1160px); }
-      .works-grid, .about { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 28px, 1160px); }
+      .about { grid-template-columns: 1fr; }
       .skills { grid-template-columns: repeat(2, 1fr); }
-      .hero { min-height: 80vh; padding: 110px 0 50px; }
-      .btn { width: 100%; margin-bottom: 8px; }
+      .hero { min-height: 60vh; padding: 110px 0 40px; }
+      .btn { width: 100%; margin-bottom: 6px; }
+    }
+    @media(max-width: 640px) {
+      .works-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -183,7 +198,7 @@
     <div class="logo"><span class="logo-dot"></span> PORTFOLIO.</div>
     <div class="links">
       <a href="#works">Кейсы</a>
-      <a href="#skills">Маркетинг & Навыки</a>
+      <a href="#skills">Навыки</a>
       <a href="#about">Обо мне</a>
       <a href="#contact">Контакты</a>
     </div>
@@ -194,15 +209,18 @@
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- Minimalist Hero -->
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Video Production · 3D / AI · Content Marketing</div>
-    <h1>Монтирую видео, которые <span>приводят клиентов</span> и растят охваты.</h1>
-    <p>Полный цикл создания контента, который работает на бизнес: сценарии с высоким удержанием, озвучка, монтаж, 3D-анимация в Blender и нейросети. Создаю связку вирусного продакшна и маркетинга для привлечения клиентов и роста каналов.</p>
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      <span>Video Production · Marketing · 3D & AI</span>
+    </div>
+    <h1>Создаю видео, которые<br><span>привлекают и удерживают.</span></h1>
+    <p>Полный цикл продакшна: сценарии с удержанием 100%+, озвучка, динамичный монтаж, 3D-анимация в Blender и генеративный AI-контент под задачи бизнеса и каналов.</p>
     <div class="hero-actions">
-      <a class="btn" href="#works">Смотреть кейсы</a>
-      <a class="btn ghost" href="https://t.me/che6rec" target="_blank">Обсудить проект в Telegram</a>
+      <a class="btn" href="#works">Смотреть работы</a>
+      <a class="btn ghost" href="https://t.me/che6rec" target="_blank">Связаться в Telegram ↗</a>
     </div>
   </div>
 </header>
@@ -211,282 +229,232 @@
 <section id="works">
   <div class="wrap">
     <div class="section-header">
-      <div class="section-title">01 / Проекты и видеокейсы</div>
+      <div class="section-title">01 / Проекты и кейсы</div>
       <div class="section-subtitle">Работы с каналов и продакшн</div>
     </div>
 
     <!-- Category Filters -->
     <div class="filters">
-      <button class="filter-btn active" onclick="filterCategory('all')">Все работы</button>
+      <button class="filter-btn active" onclick="filterCategory('all')">Все кейсы</button>
       <button class="filter-btn" onclick="filterCategory('commercial')">Shorts & Коммерция</button>
       <button class="filter-btn" onclick="filterCategory('gaming')">Gaming (Rust)</button>
       <button class="filter-btn" onclick="filterCategory('3d')">3D в Blender</button>
-      <button class="filter-btn" onclick="filterCategory('ai')">AI-Контент & VFX</button>
+      <button class="filter-btn" onclick="filterCategory('ai')">AI & VFX</button>
     </div>
 
     <div class="works-grid">
 
       <!-- Case 1: MoonQueenPS -->
       <div class="work-card" data-cat="commercial">
-        <a class="channel-banner bg-moonqueen vertical" href="https://www.youtube.com/@MoonQueenPS/shorts" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Shorts · 400K+ Views · Воронка продаж</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-moonqueen">
+          <div class="banner-meta">
+            <span class="banner-badge">Shorts · 400K+ Views</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">MOONQUEEN PS</div>
-            <div class="banner-brand-sub">PlayStation Store Commercial</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Открыть подборку Shorts
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>MoonQueenPS: Вирусные Shorts для e-commerce</h3>
-            <p><strong>Маркетинг + Продакшн:</strong> Сценарий, съемка, озвучка и монтаж. Ролики собирают от 400 000+ просмотров и конвертируют холодный трафик в прямые заказы магазина игр.</p>
+            <div class="banner-title">MoonQueen PS</div>
+            <div class="banner-subtitle">PlayStation Store Commercial</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Вирусные Shorts для e-commerce</h3>
+          <p>Сценарий, съемка, озвучка и монтаж. Ролики собирают от 400 000+ просмотров и конвертируют трафик в прямые заказы.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://www.youtube.com/@MoonQueenPS/shorts" target="_blank">▶ Лучшие Shorts</a>
-            <a class="btn-action-secondary" href="https://www.youtube.com/@MoonQueenPS" target="_blank">Весь канал ↗</a>
+            <a class="btn-action-primary" href="https://www.youtube.com/@MoonQueenPS/shorts" target="_blank">▶ Смотреть Shorts</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@MoonQueenPS" target="_blank">Канал ↗</a>
           </div>
         </div>
       </div>
 
       <!-- Case 2: Media Respawn -->
       <div class="work-card" data-cat="commercial">
-        <a class="channel-banner bg-respawn vertical" href="https://www.youtube.com/@media.respawn/shorts" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Face-to-Camera · Личный бренд</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-respawn">
+          <div class="banner-meta">
+            <span class="banner-badge">Личный бренд</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">MEDIA RESPAWN</div>
-            <div class="banner-brand-sub">Игровые новости & Софт</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Смотреть видеоролики
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>media.respawn: Новости, фишки и софт</h3>
-            <p>Личный бренд: работа в кадре, удержание внимания, сценарии на игровых инсайдах, лайфхаках и оптимизации софта.</p>
+            <div class="banner-title">media.respawn</div>
+            <div class="banner-subtitle">Игровые новости & Софт</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Новости, фишки и сливы софта</h3>
+          <p>Личный бренд: работа в кадре, удержание внимания, динамичный монтаж и сценарии на актуальных инсайдах.</p>
           <div class="card-actions">
             <a class="btn-action-primary" href="https://www.youtube.com/@media.respawn/shorts" target="_blank">▶ Смотреть видео</a>
-            <a class="btn-action-secondary" href="https://www.youtube.com/@media.respawn" target="_blank">Весь канал ↗</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@media.respawn" target="_blank">Канал ↗</a>
           </div>
         </div>
       </div>
 
-      <!-- Case 3: Magic Rust (3D Shorts) -->
+      <!-- Case 3: Magic Rust -->
       <div class="work-card" data-cat="gaming">
-        <a class="channel-banner bg-rust vertical" href="https://www.youtube.com/@MAGICRUST/shorts" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">3D Shorts · Gaming</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-rust">
+          <div class="banner-meta">
+            <span class="banner-badge">3D Shorts</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">MAGIC RUST</div>
-            <div class="banner-brand-sub">3D-Анимации персонажей</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Смотреть 3D Shorts
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>MAGIC RUST: 3D-анимации для Shorts</h3>
-            <p>Разработка и рендер кастомных 3D-анимаций в Blender под вертикальные форматы для привлечения онлайна на игровые серверы.</p>
+            <div class="banner-title">MAGIC RUST</div>
+            <div class="banner-subtitle">3D-Анимации персонажей</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>3D-анимации для вирусных Shorts</h3>
+          <p>Разработка и рендер 3D-сцен в Blender под вертикальные форматы для привлечения онлайна на серверы.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://www.youtube.com/@MAGICRUST/shorts" target="_blank">▶ Смотреть 3D Shorts</a>
-            <a class="btn-action-secondary" href="https://www.youtube.com/@MAGICRUST" target="_blank">Весь канал ↗</a>
+            <a class="btn-action-primary" href="https://www.youtube.com/@MAGICRUST/shorts" target="_blank">▶ 3D Shorts</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@MAGICRUST" target="_blank">Канал ↗</a>
           </div>
         </div>
       </div>
 
       <!-- Case 4: Mirage Rust -->
       <div class="work-card" data-cat="gaming">
-        <a class="channel-banner bg-rust" href="https://www.youtube.com/@MIRAGERUST/videos" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Gaming Project · Rust</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-rust">
+          <div class="banner-meta">
+            <span class="banner-badge">Gaming Project</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">MIRAGE RUST</div>
-            <div class="banner-brand-sub">Серверный видеопродакшн</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Смотреть видео на канале
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>MIRAGE RUST: Продакшн игрового проекта</h3>
-            <p>Сценарии, съемка на серверах, дикторская озвучка и финальный монтаж для привлечения новой аудитории.</p>
+            <div class="banner-title">MIRAGE RUST</div>
+            <div class="banner-subtitle">Серверный видеопродакшн</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Видеопродакшн игрового проекта</h3>
+          <p>Сценарии, съемка на серверах игры, дикторская озвучка и финальный монтаж под привлечение игроков.</p>
           <div class="card-actions">
             <a class="btn-action-primary" href="https://www.youtube.com/@MIRAGERUST/videos" target="_blank">▶ Смотреть видео</a>
-            <a class="btn-action-secondary" href="https://www.youtube.com/@MIRAGERUST" target="_blank">Весь канал ↗</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@MIRAGERUST" target="_blank">Канал ↗</a>
           </div>
         </div>
       </div>
 
       <!-- Case 5: Chebr Rust -->
       <div class="work-card" data-cat="gaming">
-        <a class="channel-banner bg-rust" href="https://www.youtube.com/@CHEBRRUST/videos" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Gaming & Memes · Rust</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-rust">
+          <div class="banner-meta">
+            <span class="banner-badge">Rust Channel</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">CHEBRRUST</div>
-            <div class="banner-brand-sub">Летсплеи & Анимации</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Смотреть контент
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>CHEBRRUST: Игровой канал по Rust</h3>
-            <p>Летсплеи, мемы, динамичные нарезки рейдов и кастомные 3D-анимации в игровом сеттинге.</p>
+            <div class="banner-title">CHEBRRUST</div>
+            <div class="banner-subtitle">Летсплеи & Анимации</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Игровой контент и мемы по Rust</h3>
+          <p>Летсплеи, мемы, динамичные нарезки рейдов и кастомные синематики в игровом сеттинге.</p>
           <div class="card-actions">
             <a class="btn-action-primary" href="https://www.youtube.com/@CHEBRRUST/videos" target="_blank">▶ Смотреть видео</a>
-            <a class="btn-action-secondary" href="https://www.youtube.com/@CHEBRRUST" target="_blank">Весь канал ↗</a>
+            <a class="btn-action-secondary" href="https://www.youtube.com/@CHEBRRUST" target="_blank">Канал ↗</a>
           </div>
         </div>
       </div>
 
-      <!-- Case 6: 3D Blender Animation 1 -->
+      <!-- Case 6: 3D Blender 1 -->
       <div class="work-card" data-cat="3d">
-        <a class="channel-banner bg-blender" href="https://disk.yandex.ru/i/cqygzk8G4Y65PQ" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Blender 3D Animation</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-blender">
+          <div class="banner-meta">
+            <span class="banner-badge">Blender 3D</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">3D SCENE #1</div>
-            <div class="banner-brand-sub">Full Blender Pipeline</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Открыть видео (Яндекс Диск)
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>3D-Сцена и анимация персонажей #1</h3>
-            <p>Свет, риггинг, анимация камеры, персонажей и саунд-дизайн полностью с нуля в Blender.</p>
+            <div class="banner-title">3D Scene #1</div>
+            <div class="banner-subtitle">Персонажи & Риггинг</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>3D-Сцена и анимация персонажей</h3>
+          <p>Свет, риггинг, анимация камеры, персонажей и саунд-дизайн полностью с нуля в Blender.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://disk.yandex.ru/i/cqygzk8G4Y65PQ" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/cqygzk8G4Y65PQ" target="_blank">▶ Открыть видео</a>
           </div>
         </div>
       </div>
 
-      <!-- Case 7: 3D Blender Animation 2 -->
+      <!-- Case 7: 3D Blender 2 -->
       <div class="work-card" data-cat="3d">
-        <a class="channel-banner bg-blender" href="https://disk.yandex.ru/i/l91MiwSNO3FPRg" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Blender 3D Cinematic</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-blender">
+          <div class="banner-meta">
+            <span class="banner-badge">Blender 3D</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">CINEMATIC 3D #2</div>
-            <div class="banner-brand-sub">Окружение & Свет</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Открыть видео (Яндекс Диск)
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>3D-Анимация в Blender #2</h3>
-            <p>Кинематографичная сцена с геометрией, динамикой окружения и проработкой эффектов.</p>
+            <div class="banner-title">Cinematic 3D #2</div>
+            <div class="banner-subtitle">Окружение & Свет</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Синематик-анимация в Blender</h3>
+          <p>Кинематографичная сцена со сложной геометрией, физикой окружения и проработкой эффектов.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://disk.yandex.ru/i/l91MiwSNO3FPRg" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/l91MiwSNO3FPRg" target="_blank">▶ Открыть видео</a>
           </div>
         </div>
       </div>
 
-      <!-- Case 8: 3D Blender Animation 3 -->
+      <!-- Case 8: 3D Blender 3 -->
       <div class="work-card" data-cat="3d">
-        <a class="channel-banner bg-blender" href="https://disk.yandex.ru/i/8OI0k6rxzO9Q9A" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Blender 3D Scene</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-blender">
+          <div class="banner-meta">
+            <span class="banner-badge">Blender 3D</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">3D ANIMATION #3</div>
-            <div class="banner-brand-sub">Персонажи & Физика</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Открыть видео (Яндекс Диск)
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>3D-Анимационный проект #3</h3>
-            <p>Создание и сборка трехмерной сцены с нуля в Blender, анимация движения и рендер.</p>
+            <div class="banner-title">3D Animation #3</div>
+            <div class="banner-subtitle">Физика движения</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Анимационный 3D-проект</h3>
+          <p>Создание трехмерной сцены с нуля в Blender, анимация движения объектов и финальный рендер.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://disk.yandex.ru/i/8OI0k6rxzO9Q9A" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/8OI0k6rxzO9Q9A" target="_blank">▶ Открыть видео</a>
           </div>
         </div>
       </div>
 
       <!-- Case 9: Hybrid Blender + AI -->
       <div class="work-card" data-cat="ai">
-        <a class="channel-banner bg-ai" href="https://disk.yandex.ru/i/ZgFt4v5v6fqGNA" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">Hybrid: Blender + AI</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-ai">
+          <div class="banner-meta">
+            <span class="banner-badge">Hybrid Pipeline</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">3D + AI RENDER</div>
-            <div class="banner-brand-sub">Гибридная генерация</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Открыть видео (Яндекс Диск)
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>Гибридный пайплайн: Blender + AI</h3>
-            <p>Создание анимации и физики в Blender с последующей генеративной стилизацией в нейросетях.</p>
+            <div class="banner-title">Blender + AI</div>
+            <div class="banner-subtitle">3D База + Нейросеть</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Гибридный пайплайн: 3D + AI</h3>
+          <p>Создание анимации и физики в Blender с последующей генеративной стилизацией в нейросетях.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://disk.yandex.ru/i/ZgFt4v5v6fqGNA" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/ZgFt4v5v6fqGNA" target="_blank">▶ Открыть видео</a>
           </div>
         </div>
       </div>
 
       <!-- Case 10: Pure AI Video -->
       <div class="work-card" data-cat="ai">
-        <a class="channel-banner bg-ai" href="https://disk.yandex.ru/i/q8pK6zSv2uxOLQ" target="_blank">
-          <div class="banner-top">
-            <span class="banner-badge">AI Video Generation</span>
-            <div class="banner-arrow">↗</div>
+        <div class="card-banner bg-ai">
+          <div class="banner-meta">
+            <span class="banner-badge">AI Generation</span>
+            <span class="banner-icon">↗</span>
           </div>
-          <div class="banner-center">
-            <div class="banner-brand-title">AI CREATIVE GEN</div>
-            <div class="banner-brand-sub">Нейросетевой продакшн</div>
-          </div>
-          <div class="banner-footer">
-            <span></span> Открыть видео (Яндекс Диск)
-          </div>
-        </a>
-        <div class="work-info">
           <div>
-            <h3>Генеративный AI-видеоролик</h3>
-            <p>Промптинг, генерация сцен, контроль движения камеры, апскейл и очистка артефактов.</p>
+            <div class="banner-title">AI Creative Gen</div>
+            <div class="banner-subtitle">Нейросетевой продакшн</div>
           </div>
+        </div>
+        <div class="card-body">
+          <h3>Генеративный AI-видеоролик</h3>
+          <p>Промптинг, генерация сцен, контроль движения камеры, апскейл и очистка артефактов.</p>
           <div class="card-actions">
-            <a class="btn-action-primary" href="https://disk.yandex.ru/i/q8pK6zSv2uxOLQ" target="_blank">▶ Смотреть видео (Яндекс Диск)</a>
+            <a class="btn-action-primary" href="https://disk.yandex.ru/i/q8pK6zSv2uxOLQ" target="_blank">▶ Открыть видео</a>
           </div>
         </div>
       </div>
@@ -522,9 +490,9 @@
       <div class="section-header">
         <div class="section-title">03 / Обо мне</div>
       </div>
-      <h2>НЕ ПРОСТО КАРТИНКА.<br>КОНТЕНТ, КОТОРЫЙ РАБОТАЕТ.</h2>
-      <p>Я объединяю видеопродакшн и маркетинг. Для меня ролик — это не просто красивая нарезка, а инструмент для достижения конкретных метрик: удержания, органического охвата и целевых действий.</p>
-      <p>Понимаю путь зрителя, структуру оффера и воронки трафика. Знаю, как удерживать внимание в коротких форматах и превращать случайных зрителей в постоянную аудиторию или прямых покупателей (как в коммерческих кейсах для магазинов и игровых проектов).</p>
+      <h2>Не просто картинка.<br>Контент, который работает.</h2>
+      <p>Я объединяю видеопродакшн и маркетинг. Для меня ролик — это инструмент для достижения конкретных метрик: высокого удержания, органического охвата и целевых действий.</p>
+      <p>Понимаю путь зрителя, структуру оффера и воронки трафика. Знаю, как удерживать внимание в коротких форматах и превращать случайных зрителей в постоянную аудиторию или прямых покупателей.</p>
     </div>
     <div class="stats">
       <div class="stat"><b>100%+</b><span>целевое удержание на вирусных Shorts</span></div>
