@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Подключение твоего шрифта Uni Sans Heavy */
+    /* Подключение шрифта Uni Sans Heavy */
     @font-face {
       font-family: 'Uni Sans Heavy';
       src: url('ofont.ru_Uni Sans.ttf') format('truetype');
@@ -29,7 +29,7 @@
       --cyan: #06b6d4;
       --text: #f8fafc;
       --muted: #94a3b8;
-      --radius: 16px;
+      --radius: 18px;
     }
 
     * {
@@ -56,7 +56,7 @@
       margin: 0 auto;
     }
 
-    /* Применение Uni Sans Heavy к заголовкам и плашкам */
+    /* Uni Sans Heavy для акцентов */
     h1,
     .metric-val,
     .card-title,
@@ -64,7 +64,10 @@
     .filter-btn,
     .card-role,
     .btn-pill,
-    .tag-badge {
+    .tag-badge,
+    .slide-tag,
+    .slide-title,
+    .slider-counter {
       font-family: 'Uni Sans Heavy', 'Plus Jakarta Sans', sans-serif;
       letter-spacing: 0.03em;
     }
@@ -72,10 +75,9 @@
     /* Шапка */
     header {
       text-align: center;
-      padding: 30px 0 20px;
+      padding: 30px 0 15px;
     }
 
-    /* Главный массивный заголовок ПОРТФОЛИО */
     h1 {
       font-size: clamp(3rem, 9vw, 5.6rem);
       font-weight: 900;
@@ -88,65 +90,102 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Подзаголовок */
     .intro-sub {
       color: var(--muted);
       font-size: clamp(0.9rem, 1.8vw, 1.05rem);
       font-weight: 500;
-      margin-bottom: 28px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin-bottom: 30px;
       opacity: 0.9;
     }
 
-    /* Блок «Обо мне и компетенциях» */
-    .about-card {
-      max-width: 860px;
-      margin: 0 auto 34px;
+    /* Карусель-слайдер «Обо мне» */
+    .slider-box {
+      max-width: 780px;
+      margin: 0 auto 36px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 30px 28px;
-      text-align: left;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      padding: 28px 32px;
+      position: relative;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(14px);
+      user-select: none;
     }
 
-    .about-intro {
-      color: var(--text);
-      font-size: 1.05rem;
-      font-weight: 600;
+    .slider-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
-      line-height: 1.5;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .about-list {
-      list-style: none;
+    .slide-tag {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .slider-counter {
+      color: var(--muted);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+    }
+
+    .slider-counter .active-num {
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    /* Окно слайдов */
+    .slides-container {
+      position: relative;
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+    }
+
+    .slide-item {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(20px);
+      transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      justify-content: center;
+      text-align: left;
     }
 
-    .about-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+    .slide-item.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      position: relative;
+    }
+
+    .slide-title {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .slide-desc {
       color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.58;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
-    .about-list li strong {
+    .slide-desc strong {
       color: var(--text);
-    }
-
-    .bullet-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent-glow);
-      margin-top: 8px;
-      flex-shrink: 0;
     }
 
     .inst-link {
@@ -160,6 +199,62 @@
     .inst-link:hover {
       color: #c084fc;
       border-bottom-color: #c084fc;
+    }
+
+    /* Навигация и контролы слайдера */
+    .slider-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .slider-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .dot.active {
+      width: 24px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .slider-arrows {
+      display: flex;
+      gap: 10px;
+    }
+
+    .arrow-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .arrow-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.05);
     }
 
     /* Кнопки контактов */
@@ -239,7 +334,6 @@
       font-size: 0.82rem;
       color: var(--muted);
       font-weight: 500;
-      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* Фильтры */
@@ -282,7 +376,6 @@
       margin-bottom: 75px;
     }
 
-    /* Кликабельная карточка */
     .project-card {
       display: flex;
       flex-direction: column;
@@ -304,7 +397,6 @@
       box-shadow: 0 16px 36px var(--accent-glow);
     }
 
-    /* Превью карточки */
     .thumb {
       position: relative;
       width: 100%;
@@ -363,7 +455,6 @@
       font-size: 0.7rem;
       color: #cbd5e1;
       font-weight: 500;
-      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .card-content {
@@ -413,7 +504,6 @@
       line-height: 1.5;
       margin-bottom: 18px;
       flex-grow: 1;
-      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .card-stack {
@@ -431,7 +521,6 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
       color: #cbd5e1;
       font-weight: 500;
-      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* Навыки */
@@ -476,7 +565,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .skill-block li::before {
@@ -496,7 +584,6 @@
       gap: 16px;
       color: var(--muted);
       font-size: 0.85rem;
-      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .footer-links {
@@ -517,7 +604,8 @@
     @media (max-width: 640px) {
       .projects-grid { grid-template-columns: 1fr; }
       .metrics-bar { grid-template-columns: 1fr 1fr; }
-      .about-card { padding: 22px 18px; }
+      .slider-box { padding: 22px 18px; }
+      .slides-container { min-height: 170px; }
       footer { flex-direction: column; text-align: center; }
     }
   </style>
@@ -531,42 +619,82 @@
       <h1>ПОРТФОЛИО</h1>
       <p class="intro-sub">надеюсь тебе понравится 🙈</p>
 
-      <!-- Информационный блок «Обо мне» -->
-      <div class="about-card">
-        <p class="about-intro">
-          Чуть ниже собраны мои кейсы. Но прежде чем ты перейдешь к просмотру — давай коротко расскажу, кто я и чем занимаюсь:
-        </p>
+      <!-- Интерактивная Карусель «Обо мне» -->
+      <div class="slider-box" id="aboutSlider">
+        <div class="slider-top">
+          <span class="slide-tag" id="slideBadge">ФАКТ 01</span>
+          <div class="slider-counter">
+            <span class="active-num" id="slideIndex">01</span> / 07
+          </div>
+        </div>
 
-        <ul class="about-list">
-          <li>
-            <span class="bullet-dot"></span>
-            <div>Меня зовут <strong>Насрула</strong>, но в проектах чаще называют <strong>ЧЕБР</strong>. Мне 31 год, по гороскопу лев... ладно, шучу, какой гороскоп 😂</div>
-          </li>
-          <li>
-            <span class="bullet-dot"></span>
-            <div><strong>10+ лет в видеопроизводстве:</strong> начинал свой путь с кинопроизводства, поэтому понимаю работу с кадром, светом и драматургией изнутри.</div>
-          </li>
-          <li>
-            <span class="bullet-dot"></span>
-            <div><strong>Маркетинговый бэкграунд:</strong> прошел обучение маркетингу у <a href="https://www.instagram.com/saidmarketing/" target="_blank" rel="noopener noreferrer" class="inst-link">@saidmarketing</a> — понимаю воронки продаж, путь клиента и умею делать видео, которые приносят реальные заявки и продажи.</div>
-          </li>
-          <li>
-            <span class="bullet-dot"></span>
-            <div><strong>Режиссура удержания (>100%):</strong> руковожу процессами от идеи до рендера. Знаю психологию зрителя: как зацепить шоковым хуком за первые 2 секунды и удержать темпоритмом.</div>
-          </li>
-          <li>
-            <span class="bullet-dot"></span>
-            <div><strong>3D-графика и CGI в Blender:</strong> создаю трехмерные анимированные сцены с нуля и по референсам.</div>
-          </li>
-          <li>
-            <span class="bullet-dot"></span>
-            <div><strong>AI-продакшн:</strong> создаю видео через генеративные нейросети (Kling, Runway, Seedance 2), в основном работаю на платформе Higgsfield. Делаю сложные реалистичные шоты под задачи и бюджет проекта.</div>
-          </li>
-          <li>
-            <span class="bullet-dot"></span>
-            <div><strong>Съемка:</strong> работаю со студийным светом, оптикой, записью чистого звука и пилотированием дрона для кинематографичной аэросъемки <em>(дрон под проект берется в аренду, своего пока нет)</em>.</div>
-          </li>
-        </ul>
+        <div class="slides-container" id="slidesTrack">
+          <!-- Слайд 1 -->
+          <div class="slide-item active" data-tag="КТО Я">
+            <h3 class="slide-title">Знакомство</h3>
+            <p class="slide-desc">
+              Меня зовут <strong>Насрула</strong>, но в проектах чаще называют <strong>ЧЕБР</strong>. Мне 31 год, по гороскопу лев... ладно, шучу, какой гороскоп 😂
+            </p>
+          </div>
+
+          <!-- Слайд 2 -->
+          <div class="slide-item" data-tag="ОПЫТ 10+ ЛЕТ">
+            <h3 class="slide-title">Кинопроизводство & Монтаж</h3>
+            <p class="slide-desc">
+              <strong>10+ лет в видеопроизводстве:</strong> начинал свой путь с кинопроизводства, поэтому понимаю работу с кадром, светом и драматургией изнутри.
+            </p>
+          </div>
+
+          <!-- Слайд 3 -->
+          <div class="slide-item" data-tag="МАРКЕТИНГ">
+            <h3 class="slide-title">Маркетинговый бэкграунд</h3>
+            <p class="slide-desc">
+              Прошел обучение маркетингу у <a href="https://www.instagram.com/saidmarketing/" target="_blank" rel="noopener noreferrer" class="inst-link">@saidmarketing</a> — понимаю воронки продаж, путь клиента и умею делать видео, которые приносят реальные заявки и продажи.
+            </p>
+          </div>
+
+          <!-- Слайд 4 -->
+          <div class="slide-item" data-tag="УДЕРЖАНИЕ >100%">
+            <h3 class="slide-title">Режиссура внимания</h3>
+            <p class="slide-desc">
+              Руковожу процессами от идеи до финального рендера. Знаю психологию зрителя: как зацепить шоковым хуком за первые 2 секунды и держать динамичным темпоритмом до конца.
+            </p>
+          </div>
+
+          <!-- Слайд 5 -->
+          <div class="slide-item" data-tag="3D & CGI">
+            <h3 class="slide-title">3D-графика в Blender</h3>
+            <p class="slide-desc">
+              Создаю трехмерные анимированные сцены в Blender с реалистичной физикой камеры и рендером в Cycles — как с полного нуля, так и по точным референсам.
+            </p>
+          </div>
+
+          <!-- Слайд 6 -->
+          <div class="slide-item" data-tag="AI ПРОДАКШН">
+            <h3 class="slide-title">Генеративные нейросети</h3>
+            <p class="slide-desc">
+              Создаю видео через нейросети (Kling, Runway, Seedance 2), в основном работаю на Higgsfield. Делаю сложные реалистичные шоты под задачи и бюджет проекта.
+            </p>
+          </div>
+
+          <!-- Слайд 7 -->
+          <div class="slide-item" data-tag="СЪЕМКА & ДРОН">
+            <h3 class="slide-title">Камера & Аэросъемка</h3>
+            <p class="slide-desc">
+              Работаю со студийным светом, оптикой, записью чистого звука и пилотированием дрона для кинематографичной аэросъемки <em>(дрон под проект берется в аренду, своего пока нет)</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="slider-bottom">
+          <div class="slider-dots" id="sliderDots">
+            <!-- Точки генерируются скриптом -->
+          </div>
+          <div class="slider-arrows">
+            <button class="arrow-btn" id="prevSlide" aria-label="Предыдущий слайд">←</button>
+            <button class="arrow-btn" id="nextSlide" aria-label="Следующий слайд">→</button>
+          </div>
+        </div>
       </div>
 
       <!-- Кнопки связи -->
@@ -1005,8 +1133,75 @@
 
   </div>
 
-  <!-- Интерактивный фильтр категорий -->
+  <!-- Скрипты: Слайдер и Фильтры -->
   <script>
+    /* Логика Карусели «Обо мне» */
+    const slides = document.querySelectorAll('.slide-item');
+    const dotsContainer = document.getElementById('sliderDots');
+    const slideIndexEl = document.getElementById('slideIndex');
+    const slideBadgeEl = document.getElementById('slideBadge');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    const sliderBox = document.getElementById('aboutSlider');
+
+    let currentSlide = 0;
+
+    // Генерация точек
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (idx === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlide() {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === currentSlide);
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+      });
+
+      slideIndexEl.textContent = String(currentSlide + 1).padStart(2, '0');
+      slideBadgeEl.textContent = slides[currentSlide].getAttribute('data-tag');
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateSlide();
+    }
+
+    function nextSlideHandler() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlide();
+    }
+
+    function prevSlideHandler() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlide();
+    }
+
+    nextBtn.addEventListener('click', nextSlideHandler);
+    prevBtn.addEventListener('click', prevSlideHandler);
+
+    // Поддержка свайпов на смартфонах
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    sliderBox.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    sliderBox.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 45) nextSlideHandler();
+      if (touchEndX - touchStartX > 45) prevSlideHandler();
+    }, { passive: true });
+
+    /* Фильтрация проектов */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.project-card');
 
