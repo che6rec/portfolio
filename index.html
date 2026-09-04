@@ -27,6 +27,7 @@
       --accent: #6366f1;
       --accent-glow: rgba(99, 102, 241, 0.22);
       --cyan: #06b6d4;
+      --cyan-glow: rgba(6, 182, 212, 0.2);
       --text: #f8fafc;
       --muted: #94a3b8;
       --radius: 18px;
@@ -97,29 +98,20 @@
       opacity: 0.9;
     }
 
-    /* Выделенный бейдж-подводка к карусели */
+    /* Суженная циан-плашка без кружка */
     .slider-pretitle {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 20px;
-      background: rgba(99, 102, 241, 0.08);
-      border: 1px solid rgba(99, 102, 241, 0.28);
+      display: inline-block;
+      padding: 5px 16px;
+      background: rgba(6, 182, 212, 0.08);
+      border: 1px solid rgba(6, 182, 212, 0.38);
       border-radius: 9999px;
-      color: #f1f5f9;
-      font-size: 0.92rem;
+      color: #22d3ee;
+      font-size: 0.85rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
       margin-bottom: 18px;
       backdrop-filter: blur(8px);
-      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.15);
-    }
-
-    .slider-pretitle .pretitle-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 8px var(--cyan);
+      box-shadow: 0 2px 14px var(--cyan-glow);
     }
 
     /* Карусель «Обо мне» */
@@ -635,8 +627,7 @@
 
       <div>
         <div class="slider-pretitle">
-          <span class="pretitle-dot"></span>
-          <span>Кейсы чуть ниже, а пока — пару слов обо мне:</span>
+          Кейсы чуть ниже, а пока — пару слов обо мне:
         </div>
       </div>
 
@@ -778,7 +769,7 @@
           <span class="tag-badge">Личный медиа-бренд</span>
           <span class="source-label">YouTube ↗</span>
           <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/></svg>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/></svg>
             <span>Смотреть канал</span>
           </div>
         </div>
