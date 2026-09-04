@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* Подключение твоего шрифта Uni Sans Heavy */
+    @font-face {
+      font-family: 'Uni Sans Heavy';
+      src: url('ofont.ru_Uni Sans.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --bg: #090b10;
       --surface: #121622;
@@ -47,40 +56,62 @@
       margin: 0 auto;
     }
 
+    /* Применение Uni Sans Heavy к акцентным элементам */
+    h1,
+    .badge-main,
+    .metric-val,
+    .card-title,
+    .section-headline,
+    .filter-btn,
+    .card-role,
+    .btn-pill,
+    .tag-badge {
+      font-family: 'Uni Sans Heavy', 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.03em;
+    }
+
     /* Шапка */
     header {
       text-align: center;
       padding: 20px 0 35px;
     }
 
-    .status-badge {
+    /* Новая аккуратная верхняя плашка */
+    .portfolio-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.25);
+      gap: 10px;
+      padding: 6px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #4ade80;
       margin-bottom: 22px;
+      backdrop-filter: blur(8px);
     }
 
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #22c55e;
+    .badge-main {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .badge-sub {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      padding-left: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     h1 {
-      font-size: clamp(2.3rem, 5vw, 3.5rem);
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
       font-weight: 800;
-      letter-spacing: -0.03em;
       line-height: 1.15;
       margin-bottom: 16px;
+      text-transform: uppercase;
       background: linear-gradient(180deg, #ffffff 20%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -91,6 +122,7 @@
       font-size: clamp(1rem, 2vw, 1.18rem);
       max-width: 720px;
       margin: 0 auto 32px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* Кнопки контактов */
@@ -108,9 +140,9 @@
       gap: 8px;
       padding: 11px 24px;
       border-radius: 9999px;
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: 0.95rem;
       text-decoration: none;
+      text-transform: uppercase;
       transition: all 0.25s ease;
     }
 
@@ -156,11 +188,11 @@
     }
 
     .metric-val {
-      font-size: 1.85rem;
-      font-weight: 800;
+      font-size: 1.95rem;
       color: #fff;
       display: block;
       margin-bottom: 4px;
+      text-transform: uppercase;
       background: linear-gradient(135deg, #fff 10%, var(--cyan) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -170,6 +202,7 @@
       font-size: 0.82rem;
       color: var(--muted);
       font-weight: 500;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* Фильтры */
@@ -188,9 +221,8 @@
       padding: 9px 18px;
       border-radius: 9999px;
       font-size: 0.86rem;
-      font-weight: 600;
       cursor: pointer;
-      font-family: inherit;
+      text-transform: uppercase;
       transition: all 0.2s ease;
     }
 
@@ -257,8 +289,10 @@
       justify-content: center;
       gap: 8px;
       color: rgba(255, 255, 255, 0.4);
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.78rem;
+      font-family: 'Uni Sans Heavy', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .project-card:hover .thumb-bg {
@@ -276,8 +310,7 @@
       padding: 4px 10px;
       border-radius: 6px;
       font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       color: #fff;
     }
@@ -293,6 +326,7 @@
       font-size: 0.7rem;
       color: #cbd5e1;
       font-weight: 500;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .card-content {
@@ -312,7 +346,6 @@
 
     .card-title {
       font-size: 1.15rem;
-      font-weight: 700;
       color: #ffffff;
       line-height: 1.35;
     }
@@ -331,8 +364,7 @@
 
     .card-role {
       color: var(--cyan);
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       margin-bottom: 8px;
@@ -344,6 +376,7 @@
       line-height: 1.5;
       margin-bottom: 18px;
       flex-grow: 1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .card-stack {
@@ -361,6 +394,7 @@
       border: 1px solid rgba(255, 255, 255, 0.06);
       color: #cbd5e1;
       font-weight: 500;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* Навыки */
@@ -373,10 +407,10 @@
     }
 
     .section-headline {
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.5rem;
       margin-bottom: 24px;
       color: #fff;
+      text-transform: uppercase;
     }
 
     .skills-grid {
@@ -387,11 +421,11 @@
 
     .skill-block h4 {
       font-size: 0.95rem;
-      font-weight: 700;
       color: var(--cyan);
       margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      font-family: 'Uni Sans Heavy', sans-serif;
     }
 
     .skill-block ul {
@@ -405,6 +439,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .skill-block li::before {
@@ -424,6 +459,7 @@
       gap: 16px;
       color: var(--muted);
       font-size: 0.85rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     .footer-links {
@@ -454,9 +490,9 @@
     
     <!-- Шапка -->
     <header>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Открыт к коммерческим заказам и проектам
+      <div class="portfolio-badge">
+        <span class="badge-main">ПОРТФОЛИО</span>
+        <span class="badge-sub">надеюсь тебе понравится 🙈</span>
       </div>
 
       <h1>Насрула Магомедов</h1>
