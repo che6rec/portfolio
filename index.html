@@ -62,11 +62,11 @@
     .card-title,
     .section-headline,
     .filter-btn,
-    .card-role,
     .btn-pill,
     .tag-badge,
     .slide-tag,
-    .slide-title {
+    .slide-title,
+    .tyk-btn {
       font-family: 'Uni Sans Heavy', 'Plus Jakarta Sans', sans-serif;
       letter-spacing: 0.03em;
     }
@@ -207,7 +207,7 @@
       border-bottom-color: #c084fc;
     }
 
-    /* Нижняя панель */
+    /* Нижняя панель карусели */
     .slider-bottom {
       display: flex;
       justify-content: space-between;
@@ -263,7 +263,7 @@
       transform: scale(1.08);
     }
 
-    /* Кнопки контактов (Telegram, Instagram, Телефон) */
+    /* Кнопки контактов */
     .hero-links {
       display: flex;
       justify-content: center;
@@ -310,7 +310,7 @@
       transform: translateY(-2px);
     }
 
-    /* Стильная рамка с текстом */
+    /* Рамка с честным текстом */
     .disclaimer-card {
       max-width: 780px;
       margin: 0 auto 40px;
@@ -369,6 +369,7 @@
       margin-bottom: 75px;
     }
 
+    /* Кликабельная карточка */
     .project-card {
       display: flex;
       flex-direction: column;
@@ -451,69 +452,64 @@
     }
 
     .card-content {
-      padding: 22px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
     .card-title {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: #ffffff;
       line-height: 1.35;
-    }
-
-    .card-icon-arrow {
-      color: var(--muted);
-      font-size: 1.25rem;
-      transition: transform 0.25s ease, color 0.25s ease;
-      flex-shrink: 0;
-    }
-
-    .project-card:hover .card-icon-arrow {
-      color: var(--accent);
-      transform: translate(3px, -3px);
-    }
-
-    .card-role {
-      color: var(--cyan);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .card-desc {
       color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
-      margin-bottom: 18px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 22px;
       flex-grow: 1;
     }
 
-    .card-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+    /* Нижняя ссылка ТЫК СЮДА */
+    .card-action {
       margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .stack-chip {
-      font-size: 0.72rem;
-      padding: 3px 9px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: #cbd5e1;
+    .action-label {
+      color: var(--muted);
+      font-size: 0.82rem;
       font-weight: 500;
+    }
+
+    .tyk-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 8px;
+      color: #818cf8;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.25s ease;
+    }
+
+    .project-card:hover .tyk-btn {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
     }
 
     /* Навыки */
@@ -724,26 +720,20 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Сценарии • Озвучка • Монтаж под ключ</div>
-          <div class="card-top">
-            <h3 class="card-title">MoonQueen PS — Продажи игр и подписок PS</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">MoonQueen Store</h3>
           <p class="card-desc">
-            Полный цикл производства контента: разработка вирусных сценариев под продажи, авторская дикторская озвучка, динамичный монтаж и упаковка. Канал стабильно генерирует высокие органические просмотры и лиды.
+            Проект занимается продажей игр и подписок на PlayStation. Здесь я полностью отвечаю за создание контента и продвижение: нахожу и придумываю идеи, пишу сценарии, озвучиваю и монтирую ролики.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Воронка продаж</span>
-            <span class="stack-chip">Озвучка</span>
-            <span class="stack-chip">Premiere Pro</span>
-            <span class="stack-chip">Shorts</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на канал:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
 
       <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
-          <span class="tag-badge">Личный медиа-бренд</span>
+          <span class="tag-badge">Личный канал</span>
           <span class="source-label">YouTube ↗</span>
           <div class="thumb-bg">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/></svg>
@@ -751,19 +741,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Ведущий в кадре • Режиссура • Монтаж</div>
-          <div class="card-top">
-            <h3 class="card-title">Media Respawn — ПК-гейминг & Техно-лайфхаки</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Media Respawn — ПК-гейминг и техно-лайфхаки</h3>
           <p class="card-desc">
-            Новый авторский проект про оптимизацию железа, софт и гейминг. Работа лицом в кадре, удержание внимания за счет быстрых смен планов, инфографики и плотного ритма повествования.
+            Мой личный авторский проект про оптимизацию ПК, софт и железки. В кадре снимаюсь сам, пишу сценарии, нахожу темы и полностью монтирую выпуски. Канал совсем свежий, развиваю с нуля.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Face-to-Camera</span>
-            <span class="stack-chip">OBS</span>
-            <span class="stack-chip">Сценарии</span>
-            <span class="stack-chip">YouTube SEO</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на канал:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -778,19 +762,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Сценарии • Озвучка • Режиссура • AI-кадры</div>
-          <div class="card-top">
-            <h3 class="card-title">MIRAGE RUST — Медиа-продакшн игровых серверов</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">MIRAGE RUST — Серверы по игре Rust</h3>
           <p class="card-desc">
-            Официальный канал крупного проекта серверов Rust. Написание сценариев, дикторская озвучка, внутриигровая съемка с кастомными камерами и интеграция нейросетей для генерации кинематографичных сцен.
+            Канал крупного проекта игровых серверов по Rust. Я придумываю сценарии, озвучиваю и снимаю ролики внутри игры, а для создания сложных и красивых кадров подключаю нейросети (ИИ).
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">AI Video Gen</span>
-            <span class="stack-chip">Rust Cinematics</span>
-            <span class="stack-chip">Озвучка</span>
-            <span class="stack-chip">Саунд-дизайн</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на канал:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -805,19 +783,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">3D Анимация в Blender • Съемка видео</div>
-          <div class="card-top">
-            <h3 class="card-title">MAGIC RUST — CGI-ролики для топ-сервера</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">MAGIC RUST — Медиа для серверов</h3>
           <p class="card-desc">
-            Создание эффектных рекламных роликов для одного из самых узнаваемых игровых проектов. Разработка 3D-анимаций моделей персонажей и оружия в Blender, интеграция с динамичным монтажом и звуковыми эффектами.
+            Еще один масштабный проект серверов по игре Rust. Снимал для них видеоролики и создавал эффектные 3D-анимации в Blender для промо и рекламы.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Blender 3D</span>
-            <span class="stack-chip">CGI</span>
-            <span class="stack-chip">Motion Design</span>
-            <span class="stack-chip">Premiere Pro</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на канал:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -832,19 +804,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">3D Анимация персонажей • Летсплеи • Монтаж</div>
-          <div class="card-top">
-            <h3 class="card-title">CHEBR RUST — Авторский игровой проект</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">CHEBR RUST — Личный игровой канал</h3>
           <p class="card-desc">
-            Личный YouTube-канал, совмещающий динамичные игровые видео и сложные 3D-анимации, полностью созданные в Blender (настройка риггинга, окружения, света и рендера).
+            Мой старый личный YouTube-канал по игре Rust. Снимал летсплеи, делал динамичный монтаж и создавал полноценную авторскую 3D-анимацию персонажей в Blender.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Blender 3D</span>
-            <span class="stack-chip">Cycles</span>
-            <span class="stack-chip">Игровой монтаж</span>
-            <span class="stack-chip">Storytelling</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на канал:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -859,19 +825,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Видеооператор • Режиссер монтажа</div>
-          <div class="card-top">
-            <h3 class="card-title">«Древо Знаний» — Онлайн-школа</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Онлайн-школа «Дом Знаний»</h3>
           <p class="card-desc">
-            Студийная видеосъемка спикеров и экспертов, постановка света, запись чистого звука и последующий монтаж образовательных курсов и промо-материалов для платформы.
+            Канал образовательной платформы. Работаю в проекте видеооператором и монтажером: выставляю студийный свет, записываю спикеров на камеру и монтирую обучающие уроки.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Съемка на камеру</span>
-            <span class="stack-chip">Студийный свет</span>
-            <span class="stack-chip">Обработка звука</span>
-            <span class="stack-chip">DaVinci Resolve</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на канал:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -886,26 +846,20 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Full 3D Pipeline (Blender)</div>
-          <div class="card-top">
-            <h3 class="card-title">Авторская 3D-анимация & Моделирование</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">3D-сцена и анимация в Blender</h3>
           <p class="card-desc">
-            Видео полностью создано с нуля в Blender: геометрия сцены, текстурирование и шейдинг, симуляции, реалистичная физика движения камеры, свет и итоговый рендер в Cycles с саунд-дизайном.
+            Ролик, который я от начала и до конца собрал в Blender: трехмерное моделирование, текстуры, свет, физика камеры, рендер и саунд-дизайн.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Blender 3D</span>
-            <span class="stack-chip">Cycles Render</span>
-            <span class="stack-chip">Lighting & Shading</span>
-            <span class="stack-chip">Sound Design</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на видео:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
 
       <a href="https://disk.yandex.ru/i/Ir1cHCn8Q0hahw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production reels">
         <div class="thumb">
-          <span class="tag-badge">Коммерческое промо</span>
+          <span class="tag-badge">Съемка & Промо</span>
           <span class="source-label">Яндекс Диск ↗</span>
           <div class="thumb-bg">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
@@ -913,19 +867,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Выездная съемка • Монтаж • Цветокоррекция</div>
-          <div class="card-top">
-            <h3 class="card-title">Промо-ролик: База отдыха на берегу моря</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Промо-ролик: База отдыха на берегу моря</h3>
           <p class="card-desc">
-            Коммерческое видео для туристического бизнеса. Проведение съемки территории и инфраструктуры у моря, подбор атмосферной музыки, кинематографичный цветокор и монтаж.
+            Коммерческий заказ для туристического бизнеса. Сам выезжал на локацию, провел съемку базы отдыха на побережье, подобрал атмосферную музыку и сделал монтаж с цветокоррекцией.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Видеосъемка</span>
-            <span class="stack-chip">Цветокоррекция</span>
-            <span class="stack-chip">Туристическое промо</span>
-            <span class="stack-chip">DaVinci Resolve</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на видео:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -940,19 +888,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Пилотирование квадрокоптера • Монтаж шотов</div>
-          <div class="card-top">
-            <h3 class="card-title">Кинематографичная съемка с квадрокоптера</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Кинематографичная съемка с квадрокоптера</h3>
           <p class="card-desc">
-            Высотная съемка масштабных локаций на дрон. Плавные траектории полета, работа с композицией кадра с воздуха, стабилизация и цветокоррекция исходников.
+            Пример моей работы с квадрокоптером: высотные пролеты над локацией, удержание горизонта, плавная траектория камеры, стабилизация и цветокоррекция исходников.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Квадрокоптер / Дрон</span>
-            <span class="stack-chip">Аэросъемка</span>
-            <span class="stack-chip">Стабилизация</span>
-            <span class="stack-chip">Color Grading</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на видео:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -967,19 +909,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Съемка • Ритмичный монтаж • Тренды</div>
-          <div class="card-top">
-            <h3 class="card-title">Динамичный Lifestyle / Promo Reels</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Динамичный Reels под музыку</h3>
           <p class="card-desc">
-            Съемка и монтаж под трендовые аудио-ритмы. Акцент на быстрых переходах, динамике движения и удержании внимания с первых секунд просмотра.
+            Вертикальный ролик для соцсетей: сам снимал и монтировал под трендовый ритмичный трек. Отличный формат для вовлечения аудитории в Instagram.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Reels / Shorts</span>
-            <span class="stack-chip">Ритмика</span>
-            <span class="stack-chip">CapCut Pro</span>
-            <span class="stack-chip">Трендовый звук</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на видео:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -994,18 +930,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Монтаж вертикального формата • SFX</div>
-          <div class="card-top">
-            <h3 class="card-title">Стильный коммерческий Reels-креатив</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Стильный коммерческий Reels</h3>
           <p class="card-desc">
-            Эстетичный короткий видеоформат для соцсетей: цветовой баланс, выверенные переходы между планами и плотное звуковое оформление (SFX) для усиления вовлечения.
+            Короткий вертикальный видеоформат для соцсетей: выверенные склейки, работа с акцентными деталями, атмосферой и звуковыми эффектами (SFX).
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">Вертикальный видеоряд</span>
-            <span class="stack-chip">Sound Design</span>
-            <span class="stack-chip">Цветокор</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на видео:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
@@ -1020,18 +951,13 @@
           </div>
         </div>
         <div class="card-content">
-          <div class="card-role">Вирусная динамика • Монтаж хука</div>
-          <div class="card-top">
-            <h3 class="card-title">Атмосферный контент для соцсетей</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
+          <h3 class="card-title">Атмосферный ролик под соцсети</h3>
           <p class="card-desc">
-            Пример ролика под алгоритмы соцсетей: зацепка зрителя, высокая плотность событий на секунду хронометража и естественная подача.
+            Пример видео под алгоритмы Reels и TikTok: цепляющий старт в первые секунды, высокая плотность событий в кадре и естественная подача.
           </p>
-          <div class="card-stack">
-            <span class="stack-chip">TikTok / Reels</span>
-            <span class="stack-chip">Хук-структура</span>
-            <span class="stack-chip">Монтаж</span>
+          <div class="card-action">
+            <span class="action-label">Ссылка на видео:</span>
+            <span class="tyk-btn">ТЫК СЮДА ↗</span>
           </div>
         </div>
       </a>
