@@ -66,8 +66,7 @@
     .btn-pill,
     .tag-badge,
     .slide-tag,
-    .slide-title,
-    .slider-counter {
+    .slide-title {
       font-family: 'Uni Sans Heavy', 'Plus Jakarta Sans', sans-serif;
       letter-spacing: 0.03em;
     }
@@ -94,20 +93,36 @@
       color: var(--muted);
       font-size: clamp(0.9rem, 1.8vw, 1.05rem);
       font-weight: 500;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       opacity: 0.9;
     }
 
-    /* Короткая подводка перед каруселью */
+    /* Выделенный бейдж-подводка к карусели */
     .slider-pretitle {
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin-bottom: 14px;
-      opacity: 0.85;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.28);
+      border-radius: 9999px;
+      color: #f1f5f9;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.15);
     }
 
-    /* Карусель «Обо мне» с вертикальным свайпом */
+    .slider-pretitle .pretitle-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    /* Карусель «Обо мне» */
     .slider-box {
       max-width: 780px;
       margin: 0 auto 36px;
@@ -123,7 +138,7 @@
 
     .slider-top {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       margin-bottom: 18px;
       padding-bottom: 14px;
@@ -134,21 +149,11 @@
       background: rgba(99, 102, 241, 0.15);
       color: #818cf8;
       border: 1px solid rgba(99, 102, 241, 0.3);
-      padding: 5px 12px;
+      padding: 5px 14px;
       border-radius: 6px;
       font-size: 0.78rem;
       text-transform: uppercase;
-    }
-
-    .slider-counter {
-      color: var(--muted);
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-    }
-
-    .slider-counter .active-num {
-      color: #fff;
-      font-size: 1.1rem;
+      letter-spacing: 0.06em;
     }
 
     /* Контейнер вертикальных слайдов */
@@ -211,7 +216,7 @@
       border-bottom-color: #c084fc;
     }
 
-    /* Нижняя панель: увеличенные стрелки и точки */
+    /* Нижняя панель */
     .slider-bottom {
       display: flex;
       justify-content: space-between;
@@ -246,7 +251,6 @@
       gap: 10px;
     }
 
-    /* Увеличенные кнопки стрелок */
     .arrow-btn {
       width: 44px;
       height: 44px;
@@ -629,14 +633,16 @@
       <h1>ПОРТФОЛИО</h1>
       <p class="intro-sub">надеюсь тебе понравится 🙈</p>
 
-      <p class="slider-pretitle">Кейсы чуть ниже, а пока — пару слов обо мне:</p>
+      <div>
+        <div class="slider-pretitle">
+          <span class="pretitle-dot"></span>
+          <span>Кейсы чуть ниже, а пока — пару слов обо мне:</span>
+        </div>
+      </div>
 
       <div class="slider-box" id="aboutSlider">
         <div class="slider-top">
           <span class="slide-tag" id="slideBadge">КТО Я</span>
-          <div class="slider-counter">
-            <span class="active-num" id="slideIndex">01</span> / 07
-          </div>
         </div>
 
         <div class="slides-container" id="slidesTrack">
@@ -1121,7 +1127,6 @@
     /* Логика Карусели «Обо мне» (Вертикальная смена) */
     const slides = document.querySelectorAll('.slide-item');
     const dotsContainer = document.getElementById('sliderDots');
-    const slideIndexEl = document.getElementById('slideIndex');
     const slideBadgeEl = document.getElementById('slideBadge');
     const prevBtn = document.getElementById('prevSlide');
     const nextBtn = document.getElementById('nextSlide');
@@ -1148,7 +1153,6 @@
         dot.classList.toggle('active', idx === currentSlide);
       });
 
-      slideIndexEl.textContent = String(currentSlide + 1).padStart(2, '0');
       slideBadgeEl.textContent = slides[currentSlide].getAttribute('data-tag');
     }
 
@@ -1182,11 +1186,9 @@
       touchEndY = e.changedTouches[0].screenY;
       const diffY = touchStartY - touchEndY;
       
-      // Свайп вверх -> следующий слайд
       if (diffY > 40) {
         nextSlideHandler();
       }
-      // Свайп вниз -> предыдущий слайд
       if (diffY < -40) {
         prevSlideHandler();
       }
