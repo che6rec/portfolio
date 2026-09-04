@@ -364,18 +364,18 @@
     /* Сетка проектов */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 22px;
       margin-bottom: 75px;
     }
 
-    /* Кликабельная карточка */
+    /* Кликабельная карточка (компактная версия) */
     .project-card {
       display: flex;
       flex-direction: column;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 16px;
       overflow: hidden;
       text-decoration: none;
       color: inherit;
@@ -386,53 +386,55 @@
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       border-color: var(--border-hover);
-      box-shadow: 0 16px 36px var(--accent-glow);
+      box-shadow: 0 14px 30px var(--accent-glow);
     }
 
+    /* Компактный и яркий баннер */
     .thumb {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #151a28;
+      height: 115px; /* Аккуратная высота без лишней пустоты */
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .thumb-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.12) 100%);
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.78rem;
-      font-family: 'Uni Sans Heavy', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.12) 100%);
     }
 
-    .project-card:hover .thumb-bg {
-      color: #fff;
+    /* Тематические эмодзи с эффектом подсветки */
+    .thumb-emoji {
+      font-size: 2.6rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .project-card:hover .thumb-emoji {
+      transform: scale(1.18) rotate(-4deg);
     }
 
     .tag-badge {
       position: absolute;
-      top: 14px;
-      left: 14px;
+      top: 10px;
+      left: 10px;
       z-index: 2;
-      background: rgba(9, 11, 16, 0.82);
+      background: rgba(9, 11, 16, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px);
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: #fff;
@@ -440,43 +442,45 @@
 
     .source-label {
       position: absolute;
-      bottom: 12px;
-      right: 12px;
+      bottom: 10px;
+      right: 10px;
       z-index: 2;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 3px 8px;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 2px 7px;
       border-radius: 4px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: #cbd5e1;
       font-weight: 500;
+      backdrop-filter: blur(4px);
     }
 
+    /* Компактный контентный блок */
     .card-content {
-      padding: 24px;
+      padding: 18px 20px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.12rem;
       color: #ffffff;
       line-height: 1.35;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .card-desc {
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      margin-bottom: 22px;
+      font-size: 0.88rem;
+      line-height: 1.52;
+      margin-bottom: 18px;
       flex-grow: 1;
     }
 
     /* Нижняя ссылка ТЫК СЮДА */
     .card-action {
       margin-top: auto;
-      padding-top: 16px;
+      padding-top: 12px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       display: flex;
       align-items: center;
@@ -499,7 +503,7 @@
       border: 1px solid rgba(99, 102, 241, 0.35);
       border-radius: 8px;
       color: #818cf8;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: all 0.25s ease;
@@ -512,54 +516,57 @@
       box-shadow: 0 0 16px var(--accent-glow);
     }
 
-    /* Навыки */
+    /* Стек и компетенции */
     .skills-section {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 38px 32px;
+      padding: 36px 32px;
       margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
     .section-headline {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       margin-bottom: 24px;
       color: #fff;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-
-    .skill-block h4 {
-      font-size: 0.95rem;
-      color: var(--cyan);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-family: 'Uni Sans Heavy', sans-serif;
-    }
-
-    .skill-block ul {
+    .skills-list {
       list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
     }
 
-    .skill-block li {
+    .skills-list li {
       color: var(--muted);
-      font-size: 0.88rem;
-      margin-bottom: 8px;
+      font-size: 0.92rem;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.2s ease;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
-    .skill-block li::before {
+    .skills-list li:hover {
+      color: #ffffff;
+      border-color: var(--border-hover);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .skills-list li::before {
       content: "•";
       color: var(--accent);
-      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1;
     }
 
     /* Подвал */
@@ -595,6 +602,8 @@
       .slider-box { padding: 22px 18px; }
       .slides-container { min-height: 175px; }
       .disclaimer-card { padding: 16px 18px; }
+      .skills-section { padding: 26px 20px; }
+      .skills-list { grid-template-columns: 1fr; }
       footer { flex-direction: column; text-align: center; }
     }
   </style>
@@ -714,9 +723,8 @@
         <div class="thumb">
           <span class="tag-badge">Коммерческий YouTube</span>
           <span class="source-label">YouTube ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            <span>Смотреть канал</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);">
+            <span class="thumb-emoji">🎮</span>
           </div>
         </div>
         <div class="card-content">
@@ -735,9 +743,8 @@
         <div class="thumb">
           <span class="tag-badge">Личный канал</span>
           <span class="source-label">YouTube ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/></svg>
-            <span>Смотреть канал</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #0d9488 100%);">
+            <span class="thumb-emoji">🖥️</span>
           </div>
         </div>
         <div class="card-content">
@@ -756,9 +763,8 @@
         <div class="thumb">
           <span class="tag-badge">Gaming & AI</span>
           <span class="source-label">YouTube ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            <span>Смотреть канал</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #451a03 0%, #78350f 60%, #b45309 100%);">
+            <span class="thumb-emoji">☢️</span>
           </div>
         </div>
         <div class="card-content">
@@ -777,9 +783,8 @@
         <div class="thumb">
           <span class="tag-badge">3D & Промо</span>
           <span class="source-label">YouTube ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <span>Смотреть канал</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #3b0764 0%, #581c87 60%, #7e22ce 100%);">
+            <span class="thumb-emoji">✨</span>
           </div>
         </div>
         <div class="card-content">
@@ -798,9 +803,8 @@
         <div class="thumb">
           <span class="tag-badge">3D & YouTube</span>
           <span class="source-label">YouTube ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M15 9h2M16 12h.01M15 15h2"/></svg>
-            <span>Смотреть канал</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #14532d 0%, #15803d 60%, #16a34a 100%);">
+            <span class="thumb-emoji">🏹</span>
           </div>
         </div>
         <div class="card-content">
@@ -819,9 +823,8 @@
         <div class="thumb">
           <span class="tag-badge">EdTech Продакшн</span>
           <span class="source-label">YouTube ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            <span>Смотреть канал</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%);">
+            <span class="thumb-emoji">🎥</span>
           </div>
         </div>
         <div class="card-content">
@@ -840,9 +843,8 @@
         <div class="thumb">
           <span class="tag-badge">3D CGI Showcase</span>
           <span class="source-label">Яндекс Диск ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-            <span>Смотреть видеоролик</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #311042 0%, #581c87 50%, #c026d3 100%);">
+            <span class="thumb-emoji">🧊</span>
           </div>
         </div>
         <div class="card-content">
@@ -861,9 +863,8 @@
         <div class="thumb">
           <span class="tag-badge">Съемка & Промо</span>
           <span class="source-label">Яндекс Диск ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-            <span>Смотреть видеоролик</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #083344 0%, #0e7490 50%, #06b6d4 100%);">
+            <span class="thumb-emoji">🏖️</span>
           </div>
         </div>
         <div class="card-content">
@@ -882,9 +883,8 @@
         <div class="thumb">
           <span class="tag-badge">Аэросъемка</span>
           <span class="source-label">Яндекс Диск ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M3 12h3m12 0h3M12 3v3m0 12v3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
-            <span>Смотреть видеоролик</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #38bdf8 100%);">
+            <span class="thumb-emoji">🛸</span>
           </div>
         </div>
         <div class="card-content">
@@ -903,9 +903,8 @@
         <div class="thumb">
           <span class="tag-badge">Instagram Reels</span>
           <span class="source-label">Яндекс Диск ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            <span>Смотреть видеоролик</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #450a0a 0%, #991b1b 50%, #dc2626 100%);">
+            <span class="thumb-emoji">🔥</span>
           </div>
         </div>
         <div class="card-content">
@@ -924,9 +923,8 @@
         <div class="thumb">
           <span class="tag-badge">Short-Form Video</span>
           <span class="source-label">Яндекс Диск ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
-            <span>Смотреть видеоролик</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #3f2c00 0%, #785a00 50%, #ca8a04 100%);">
+            <span class="thumb-emoji">💎</span>
           </div>
         </div>
         <div class="card-content">
@@ -945,9 +943,8 @@
         <div class="thumb">
           <span class="tag-badge">Viral Reels</span>
           <span class="source-label">Яндекс Диск ↗</span>
-          <div class="thumb-bg">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span>Смотреть видеоролик</span>
+          <div class="thumb-bg" style="background: linear-gradient(135deg, #3b0764 0%, #831843 50%, #be185d 100%);">
+            <span class="thumb-emoji">📈</span>
           </div>
         </div>
         <div class="card-content">
@@ -966,44 +963,21 @@
 
     <div class="skills-section">
       <div class="section-headline">Стек & Ключевые компетенции</div>
-      <div class="skills-grid">
-        <div class="skill-block">
-          <h4>Монтаж & Цвет</h4>
-          <ul>
-            <li>DaVinci Resolve Studio</li>
-            <li>Adobe Premiere Pro</li>
-            <li>After Effects</li>
-            <li>CapCut Pro</li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4>3D & Съемка</h4>
-          <ul>
-            <li>Blender 3D (Cycles, Rigging)</li>
-            <li>Аэросъемка (Квадрокоптер / Дрон)</li>
-            <li>Камерная и студийная съемка</li>
-            <li>Rust Asset Editor (RAE)</li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4>AI & Новые медиа</h4>
-          <ul>
-            <li>Kling AI / Runway / Veo</li>
-            <li>ElevenLabs (AI-голос)</li>
-            <li>Topaz Video AI (Апскейл)</li>
-            <li>OBS Studio (Стриминг и запись)</li>
-          </ul>
-        </div>
-        <div class="skill-block">
-          <h4>YouTube & Удержание</h4>
-          <ul>
-            <li>Хуки первых секунд (0–3 сек)</li>
-            <li>Seamless Looping (Бесшовный луп)</li>
-            <li>Сценарии для продаж и лидов</li>
-            <li>Дикторская озвучка видео</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="skills-list">
+        <li>DaVinci Resolve Studio</li>
+        <li>Adobe Premiere Pro</li>
+        <li>After Effects</li>
+        <li>CapCut Pro</li>
+        <li>Blender 3D (Cycles, Rigging)</li>
+        <li>Rust Asset Editor (RAE)</li>
+        <li>Камерная и студийная съемка</li>
+        <li>Аэросъемка (Квадрокоптер / Дрон)</li>
+        <li>Kling AI / Runway / Veo</li>
+        <li>ElevenLabs (AI-голос)</li>
+        <li>Topaz Video AI (Апскейл)</li>
+        <li>OBS Studio (Стриминг и запись)</li>
+        <li>Хуки первых секунд (0–3 сек)</li>
+      </ul>
     </div>
 
     <footer>
