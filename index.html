@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Насрула Магомедов — Video Editor, 3D & AI Creator</title>
-  <meta name="description" content="Портфолио видеомонтажера: динамичные Shorts/Reels, 3D анимация в Blender, гейминг-контент (Rust) и коммерческие AI-проекты.">
+  <title>Насрула Магомедов — Video Editor, 3D Animator & Content Creator</title>
+  <meta name="description" content="Портфолио: монтаж вирусных Shorts/Reels, 3D анимация в Blender, коммерческий продакшн, аэросъемка и YouTube-проекты под ключ.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #090b10;
-      --surface: #111520;
-      --surface-hover: #161b2a;
+      --surface: #121622;
+      --surface-hover: #181e2e;
       --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(99, 102, 241, 0.45);
+      --border-hover: rgba(99, 102, 241, 0.5);
       --accent: #6366f1;
-      --accent-glow: rgba(99, 102, 241, 0.25);
+      --accent-glow: rgba(99, 102, 241, 0.22);
       --cyan: #06b6d4;
       --text: #f8fafc;
       --muted: #94a3b8;
@@ -37,29 +37,34 @@
       padding: 40px 20px 80px;
       min-height: 100vh;
       background-image: 
-        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
       background-attachment: fixed;
     }
 
     .container {
-      max-width: 1140px;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
-    /* Верхний статус-бейдж */
+    /* Шапка */
+    header {
+      text-align: center;
+      padding: 20px 0 35px;
+    }
+
     .status-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
+      padding: 6px 16px;
       background: rgba(34, 197, 94, 0.1);
       border: 1px solid rgba(34, 197, 94, 0.25);
       border-radius: 9999px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: #4ade80;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .status-dot {
@@ -70,28 +75,22 @@
       box-shadow: 0 0 10px #22c55e;
     }
 
-    /* Hero */
-    header {
-      text-align: center;
-      padding: 20px 0 45px;
-    }
-
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-size: clamp(2.3rem, 5vw, 3.5rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.15;
       margin-bottom: 16px;
-      background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+      background: linear-gradient(180deg, #ffffff 20%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
       color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      max-width: 680px;
-      margin: 0 auto 30px;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      max-width: 720px;
+      margin: 0 auto 32px;
     }
 
     /* Кнопки контактов */
@@ -100,14 +99,14 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     .btn-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 22px;
+      padding: 11px 24px;
       border-radius: 9999px;
       font-size: 0.92rem;
       font-weight: 600;
@@ -119,13 +118,12 @@
       background: var(--accent);
       color: #ffffff;
       box-shadow: 0 4px 20px var(--accent-glow);
-      border: 1px solid transparent;
     }
 
     .btn-primary:hover {
       background: #4f46e5;
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 6px 26px rgba(99, 102, 241, 0.4);
     }
 
     .btn-secondary {
@@ -143,7 +141,7 @@
     /* Метрики */
     .metrics-bar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border);
@@ -158,12 +156,12 @@
     }
 
     .metric-val {
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       font-weight: 800;
       color: #fff;
       display: block;
       margin-bottom: 4px;
-      background: linear-gradient(135deg, #fff 0%, var(--cyan) 100%);
+      background: linear-gradient(135deg, #fff 10%, var(--cyan) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -174,22 +172,22 @@
       font-weight: 500;
     }
 
-    /* Фильтры проектов */
+    /* Фильтры */
     .filter-bar {
       display: flex;
       justify-content: center;
       gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .filter-btn {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--muted);
-      padding: 8px 18px;
+      padding: 9px 18px;
       border-radius: 9999px;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       cursor: pointer;
       font-family: inherit;
@@ -207,12 +205,12 @@
       border-color: var(--text);
     }
 
-    /* Grid Карточек */
+    /* Сетка проектов */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 24px;
-      margin-bottom: 70px;
+      margin-bottom: 75px;
     }
 
     /* Кликабельная карточка */
@@ -237,12 +235,12 @@
       box-shadow: 0 16px 36px var(--accent-glow);
     }
 
-    /* Контейнер превью с авто-фоном */
+    /* Превью карточки */
     .thumb {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #141926;
+      background: #151a28;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -252,25 +250,19 @@
     .thumb-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(6, 182, 212, 0.12) 100%);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: rgba(255, 255, 255, 0.2);
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.75rem;
+      font-weight: 600;
     }
 
-    .thumb img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      z-index: 1;
-    }
-
-    .project-card:hover .thumb img {
-      transform: scale(1.05);
+    .project-card:hover .thumb-bg {
+      color: #fff;
     }
 
     .tag-badge {
@@ -278,7 +270,7 @@
       top: 14px;
       left: 14px;
       z-index: 2;
-      background: rgba(9, 11, 16, 0.75);
+      background: rgba(9, 11, 16, 0.82);
       border: 1px solid rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px);
       padding: 4px 10px;
@@ -288,6 +280,19 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: #fff;
+    }
+
+    .source-label {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      color: #cbd5e1;
+      font-weight: 500;
     }
 
     .card-content {
@@ -306,15 +311,15 @@
     }
 
     .card-title {
-      font-size: 1.18rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     .card-icon-arrow {
       color: var(--muted);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       transition: transform 0.25s ease, color 0.25s ease;
       flex-shrink: 0;
     }
@@ -322,6 +327,15 @@
     .project-card:hover .card-icon-arrow {
       color: var(--accent);
       transform: translate(3px, -3px);
+    }
+
+    .card-role {
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
     }
 
     .card-desc {
@@ -349,12 +363,12 @@
       font-weight: 500;
     }
 
-    /* Раздел навыков */
+    /* Навыки */
     .skills-section {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 36px 30px;
+      padding: 38px 32px;
       margin-bottom: 60px;
     }
 
@@ -363,15 +377,12 @@
       font-weight: 700;
       margin-bottom: 24px;
       color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      gap: 24px;
     }
 
     .skill-block h4 {
@@ -402,7 +413,7 @@
       font-weight: bold;
     }
 
-    /* Footer */
+    /* Подвал */
     footer {
       border-top: 1px solid var(--border);
       padding-top: 30px;
@@ -431,16 +442,9 @@
     }
 
     @media (max-width: 640px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      .metrics-bar {
-        grid-template-columns: 1fr 1fr;
-      }
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
+      .projects-grid { grid-template-columns: 1fr; }
+      .metrics-bar { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -452,218 +456,397 @@
     <header>
       <div class="status-badge">
         <span class="status-dot"></span>
-        Открыт к новым проектам и сотрудничеству
+        Открыт к коммерческим заказам и проектам
       </div>
 
       <h1>Насрула Магомедов</h1>
       <p class="subtitle">
-        Монтаж динамичных видео с удержанием >100%, кинематографичные 3D-сцены в Blender, вирусные гейминг-Shorts и коммерческий AI-продакшн.
+        Видеомонтаж с удержанием аудитории, авторские 3D-сцены в Blender, аэросъемка, коммерческие Reels и создание медиа-проектов под ключ.
       </p>
 
-      <!-- Кнопки контактов и перехода на соцсети -->
       <div class="hero-links">
         <a href="https://t.me/che6rec" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          Telegram
+          Связаться в Telegram
         </a>
-        <a href="https://www.youtube.com/@mediarespawn" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary">
+        <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>
-          YouTube (Media Respawn)
-        </a>
-        <a href="https://github.com/che6rec" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary">
-          GitHub
+          YouTube-канал
         </a>
       </div>
     </header>
 
-    <!-- Метрики / Опыт -->
+    <!-- Метрики -->
     <div class="metrics-bar">
       <div class="metric-item">
         <span class="metric-val">10+ лет</span>
-        <span class="metric-lbl">Опыт в монтаже</span>
+        <span class="metric-lbl">Опыт видеомонтажа</span>
       </div>
       <div class="metric-item">
-        <span class="metric-val">&gt;100%</span>
-        <span class="metric-lbl">Удержание в Shorts</span>
+        <span class="metric-val">Full-Cycle</span>
+        <span class="metric-lbl">От идеи до готового видео</span>
       </div>
       <div class="metric-item">
         <span class="metric-val">3D & AI</span>
-        <span class="metric-lbl">Blender / Kling / Resolve</span>
+        <span class="metric-lbl">Blender 3D + Нейросети</span>
       </div>
       <div class="metric-item">
-        <span class="metric-val">Gaming</span>
-        <span class="metric-lbl">Rust & PC Hardware</span>
+        <span class="metric-val">FPV / Drone</span>
+        <span class="metric-lbl">Аэросъемка и режиссура</span>
       </div>
     </div>
 
-    <!-- Фильтры по категориям проектов -->
+    <!-- Фильтры категорий -->
     <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">Все проекты</button>
-      <button class="filter-btn" data-filter="shorts">Shorts & Reels</button>
-      <button class="filter-btn" data-filter="blender">3D & Blender</button>
-      <button class="filter-btn" data-filter="rust">Rust & Gaming</button>
-      <button class="filter-btn" data-filter="ai">AI Video</button>
+      <button class="filter-btn active" data-filter="all">Все проекты (12)</button>
+      <button class="filter-btn" data-filter="youtube">YouTube-каналы</button>
+      <button class="filter-btn" data-filter="reels">Reels & Промо</button>
+      <button class="filter-btn" data-filter="3d-ai">3D Blender & AI</button>
+      <button class="filter-btn" data-filter="production">Съемка & Дрон</button>
     </div>
 
-    <!-- Сетка проектов (Кликабельные карточки) -->
+    <!-- Сетка проектов -->
     <div class="projects-grid">
 
-      <!-- Карточка 1: Вирусные гейминг Shorts -->
-      <a href="https://www.youtube.com/@mediarespawn/shorts" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="shorts">
+      <!-- 1. MoonQueen PS -->
+      <a href="https://www.youtube.com/@MoonQueenPS" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
-          <span class="tag-badge">Shorts & Reels</span>
+          <span class="tag-badge">Коммерческий YouTube</span>
+          <span class="source-label">YouTube ↗</span>
           <div class="thumb-bg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Смотреть канал</span>
           </div>
-          <!-- Замени на свой скриншот: img/shorts1.jpg -->
-          <img src="" alt="Вирусный гейминг Shorts" onerror="this.style.display='none'">
         </div>
         <div class="card-content">
+          <div class="card-role">Сценарии • Озвучка • Монтаж под ключ</div>
           <div class="card-top">
-            <h3 class="card-title">Вирусные Shorts с удержанием 100%+</h3>
+            <h3 class="card-title">MoonQueen PS — Продажи игр и подписок PS</h3>
             <span class="card-icon-arrow">↗</span>
           </div>
           <p class="card-desc">
-            Формула удержания: шоковый хук за первые 2 секунды, динамичная смена кадров каждые 1.5 сек, саунд-дизайн и бесшовный луп (Seamless Loop).
+            Полный цикл производства контента: разработка вирусных сценариев под продажи, авторская дикторская озвучка, динамичный монтаж и упаковка. Канал стабильно генерирует высокие органические просмотры и лиды.
           </p>
           <div class="card-stack">
+            <span class="stack-chip">Воронка продаж</span>
+            <span class="stack-chip">Озвучка</span>
             <span class="stack-chip">Premiere Pro</span>
-            <span class="stack-chip">CapCut Pro</span>
-            <span class="stack-chip">Психология удержания</span>
+            <span class="stack-chip">Shorts</span>
           </div>
         </div>
       </a>
 
-      <!-- Карточка 2: 3D Анимация в Blender -->
-      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="blender">
+      <!-- 2. Media Respawn -->
+      <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
-          <span class="tag-badge">3D & CGI</span>
+          <span class="tag-badge">Личный медиа-бренд</span>
+          <span class="source-label">YouTube ↗</span>
           <div class="thumb-bg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/></svg>
+            <span>Смотреть канал</span>
           </div>
-          <img src="" alt="Blender 3D Animation" onerror="this.style.display='none'">
         </div>
         <div class="card-content">
+          <div class="card-role">Ведущий в кадре • Режиссура • Монтаж</div>
           <div class="card-top">
-            <h3 class="card-title">3D Анимация & Сцены в Blender</h3>
+            <h3 class="card-title">Media Respawn — ПК-гейминг & Техно-лайфхаки</h3>
             <span class="card-icon-arrow">↗</span>
           </div>
           <p class="card-desc">
-            Моделирование, настройка материалов, освещения, анимация камеры с реалистичной физикой и рендер в Cycles для вертикальных и горизонтальных роликов.
+            Новый авторский проект про оптимизацию железа, софт и гейминг. Работа лицом в кадре, удержание внимания за счет быстрых смен планов, инфографики и плотного ритма повествования.
           </p>
           <div class="card-stack">
-            <span class="stack-chip">Blender 3D</span>
-            <span class="stack-chip">Cycles Render</span>
-            <span class="stack-chip">DaVinci Resolve</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Карточка 3: Rust Cinematics & Edits -->
-      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="rust">
-        <div class="thumb">
-          <span class="tag-badge">Gaming & Rust</span>
-          <div class="thumb-bg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M15 9h2M16 12h.01M15 15h2"/></svg>
-          </div>
-          <img src="" alt="Rust Cinematics" onerror="this.style.display='none'">
-        </div>
-        <div class="card-content">
-          <div class="card-top">
-            <h3 class="card-title">Rust Movie & Cinematic Promos</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
-          <p class="card-desc">
-            Промо-ролики для серверов, синематики через Rust Asset Editor (RAE), глубокий саунд-дизайн оружия/окружения и плавная цветокоррекция.
-          </p>
-          <div class="card-stack">
-            <span class="stack-chip">Rust RAE</span>
-            <span class="stack-chip">DaVinci Resolve</span>
-            <span class="stack-chip">Sound Design</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Карточка 4: AI Commercial & Promo -->
-      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="ai">
-        <div class="thumb">
-          <span class="tag-badge">AI Video</span>
-          <div class="thumb-bg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          </div>
-          <img src="" alt="AI Commercial" onerror="this.style.display='none'">
-        </div>
-        <div class="card-content">
-          <div class="card-top">
-            <h3 class="card-title">Генеративное AI-видео & Промо</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
-          <p class="card-desc">
-            Генерация кинематографичных шотов через нейросети (Kling, Runway, Luma), профессиональный промптинг, апскейл и итоговый монтаж в единую историю.
-          </p>
-          <div class="card-stack">
-            <span class="stack-chip">Kling AI</span>
-            <span class="stack-chip">Topaz Video</span>
-            <span class="stack-chip">ElevenLabs</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Карточка 5: YouTube Long-Form & Обзоры -->
-      <a href="https://www.youtube.com/@mediarespawn" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="shorts">
-        <div class="thumb">
-          <span class="tag-badge">YouTube Media</span>
-          <div class="thumb-bg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/></svg>
-          </div>
-          <img src="" alt="Media Respawn Videos" onerror="this.style.display='none'">
-        </div>
-        <div class="card-content">
-          <div class="card-top">
-            <h3 class="card-title">Media Respawn: PC Gaming & Tech</h3>
-            <span class="card-icon-arrow">↗</span>
-          </div>
-          <p class="card-desc">
-            Комплексный продакшн: написание сценария по триггерам, подбор геймплея, анимация плашек, оптимизация под алгоритмы и кликабельные превью.
-          </p>
-          <div class="card-stack">
+            <span class="stack-chip">Face-to-Camera</span>
+            <span class="stack-chip">OBS</span>
             <span class="stack-chip">Сценарии</span>
-            <span class="stack-chip">Монтаж</span>
             <span class="stack-chip">YouTube SEO</span>
           </div>
         </div>
       </a>
 
-      <!-- Карточка 6: Color Grading & Post-Production -->
-      <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="blender">
+      <!-- 3. MIRAGE RUST -->
+      <a href="https://www.youtube.com/@MIRAGERUST" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
-          <span class="tag-badge">Post-Production</span>
+          <span class="tag-badge">Gaming & AI</span>
+          <span class="source-label">YouTube ↗</span>
           <div class="thumb-bg">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <span>Смотреть канал</span>
           </div>
-          <img src="" alt="Color Grading" onerror="this.style.display='none'">
         </div>
         <div class="card-content">
+          <div class="card-role">Сценарии • Озвучка • Режиссура • AI-кадры</div>
           <div class="card-top">
-            <h3 class="card-title">Цветокоррекция & Саунд-дизайн</h3>
+            <h3 class="card-title">MIRAGE RUST — Медиа-продакшн игровых серверов</h3>
             <span class="card-icon-arrow">↗</span>
           </div>
           <p class="card-desc">
-            Работа в DaVinci Resolve: сопоставление камер, LUT-паки, сведение звуковых слоев, чистка шума и создание плотного объемного звучания.
+            Официальный канал крупного проекта серверов Rust. Написание сценариев, дикторская озвучка, внутриигровая съемка с кастомными камерами и интеграция нейросетей для генерации кинематографичных сцен.
           </p>
           <div class="card-stack">
-            <span class="stack-chip">DaVinci Color</span>
-            <span class="stack-chip">Fairlight Audio</span>
-            <span class="stack-chip">WebM / H.265</span>
+            <span class="stack-chip">AI Video Gen</span>
+            <span class="stack-chip">Rust Cinematics</span>
+            <span class="stack-chip">Озвучка</span>
+            <span class="stack-chip">Саунд-дизайн</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. MAGIC RUST -->
+      <a href="https://www.youtube.com/@MAGICRUST" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
+        <div class="thumb">
+          <span class="tag-badge">3D & Промо</span>
+          <span class="source-label">YouTube ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Смотреть канал</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">3D Анимация в Blender • Съемка видео</div>
+          <div class="card-top">
+            <h3 class="card-title">MAGIC RUST — CGI-ролики для топ-сервера</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Создание эффектных рекламных роликов для одного из самых узнаваемых игровых проектов. Разработка 3D-анимаций моделей персонажей и оружия в Blender, интеграция с динамичным монтажом и звуковыми эффектами.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Blender 3D</span>
+            <span class="stack-chip">CGI</span>
+            <span class="stack-chip">Motion Design</span>
+            <span class="stack-chip">Premiere Pro</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. CHEBR RUST -->
+      <a href="https://www.youtube.com/@CHEBRRUST/featured" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
+        <div class="thumb">
+          <span class="tag-badge">3D & YouTube</span>
+          <span class="source-label">YouTube ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M15 9h2M16 12h.01M15 15h2"/></svg>
+            <span>Смотреть канал</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">3D Анимация персонажей • Летсплеи • Монтаж</div>
+          <div class="card-top">
+            <h3 class="card-title">CHEBR RUST — Авторский игровой проект</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Личный YouTube-канал, совмещающий динамичные игровые видео и сложные 3D-анимации, полностью созданные в Blender (настройка риггинга, окружения, света и рендера).
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Blender 3D</span>
+            <span class="stack-chip">Cycles</span>
+            <span class="stack-chip">Игровой монтаж</span>
+            <span class="stack-chip">Storytelling</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. Онлайн-школа Древо Знаний -->
+      <a href="https://www.youtube.com/@d.znaniy" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube production">
+        <div class="thumb">
+          <span class="tag-badge">EdTech Продакшн</span>
+          <span class="source-label">YouTube ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <span>Смотреть канал</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Видеооператор • Режиссер монтажа</div>
+          <div class="card-top">
+            <h3 class="card-title">«Древо Знаний» — Онлайн-школа</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Студийная видеосъемка спикеров и экспертов, постановка света, запись чистого звука и последующий монтаж образовательных курсов и промо-материалов для платформы.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Съемка на камеру</span>
+            <span class="stack-chip">Студийный свет</span>
+            <span class="stack-chip">Обработка звука</span>
+            <span class="stack-chip">DaVinci Resolve</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 7. Blender Полная сцена (Яндекс Диск) -->
+      <a href="https://disk.yandex.ru/i/UsrmWuEQVuPsoQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="3d-ai">
+        <div class="thumb">
+          <span class="tag-badge">3D CGI Showcase</span>
+          <span class="source-label">Яндекс Диск ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>Смотреть видеоролик</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Full 3D Pipeline (Blender)</div>
+          <div class="card-top">
+            <h3 class="card-title">Авторская 3D-анимация & Моделирование</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Видео полностью создано с нуля в Blender: геометрия сцены, текстурирование и шейдинг, симуляции, реалистичная физика движения камеры, свет и итоговый рендер в Cycles с саунд-дизайном.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Blender 3D</span>
+            <span class="stack-chip">Cycles Render</span>
+            <span class="stack-chip">Lighting & Shading</span>
+            <span class="stack-chip">Sound Design</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 8. База отдыха у моря (Яндекс Диск) -->
+      <a href="https://disk.yandex.ru/i/Ir1cHCn8Q0hahw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production reels">
+        <div class="thumb">
+          <span class="tag-badge">Коммерческое промо</span>
+          <span class="source-label">Яндекс Диск ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            <span>Смотреть видеоролик</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Выездная съемка • Монтаж • Цветокоррекция</div>
+          <div class="card-top">
+            <h3 class="card-title">Промо-ролик: База отдыха на берегу моря</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Коммерческое видео для туристического бизнеса. Проведение съемки территории и инфраструктуры у моря, подбор атмосферной музыки, кинематографичный цветокор и монтаж.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Видеосъемка</span>
+            <span class="stack-chip">Цветокоррекция</span>
+            <span class="stack-chip">Туристическое промо</span>
+            <span class="stack-chip">DaVinci Resolve</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 9. Аэросъемка с дрона (Яндекс Диск) -->
+      <a href="https://disk.yandex.ru/i/uSYB2od0rmpFtQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production">
+        <div class="thumb">
+          <span class="tag-badge">Аэросъемка</span>
+          <span class="source-label">Яндекс Диск ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M3 12h3m12 0h3M12 3v3m0 12v3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+            <span>Смотреть видеоролик</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Пилотирование квадрокоптера • Монтаж шотов</div>
+          <div class="card-top">
+            <h3 class="card-title">Кинематографичная съемка с квадрокоптера</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Высотная съемка масштабных локаций на дрон. Плавные траектории полета, работа с композицией кадра с воздуха, стабилизация и цветокоррекция исходников.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Квадрокоптер / Дрон</span>
+            <span class="stack-chip">Аэросъемка</span>
+            <span class="stack-chip">Стабилизация</span>
+            <span class="stack-chip">Color Grading</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 10. Reels / Трендовый динамичный (Яндекс Диск) -->
+      <a href="https://disk.yandex.ru/i/YTf92W1nyj_4Nw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
+        <div class="thumb">
+          <span class="tag-badge">Instagram Reels</span>
+          <span class="source-label">Яндекс Диск ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>Смотреть видеоролик</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Съемка • Ритмичный монтаж • Тренды</div>
+          <div class="card-top">
+            <h3 class="card-title">Динамичный Lifestyle / Promo Reels</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Съемка и монтаж под трендовые аудио-ритмы. Акцент на быстрых переходах, динамике движения и удержании внимания с первых секунд просмотра.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Reels / Shorts</span>
+            <span class="stack-chip">Ритмика</span>
+            <span class="stack-chip">CapCut Pro</span>
+            <span class="stack-chip">Трендовый звук</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 11. Reels #2 (Яндекс Диск) -->
+      <a href="https://disk.yandex.ru/i/2m17Szfj-fSSEg" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
+        <div class="thumb">
+          <span class="tag-badge">Short-Form Video</span>
+          <span class="source-label">Яндекс Диск ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Смотреть видеоролик</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Монтаж вертикального формата • SFX</div>
+          <div class="card-top">
+            <h3 class="card-title">Стильный коммерческий Reels-креатив</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Эстетичный короткий видеоформат для соцсетей: цветовой баланс, выверенные переходы между планами и плотное звуковое оформление (SFX) для усиления вовлечения.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">Вертикальный видеоряд</span>
+            <span class="stack-chip">Sound Design</span>
+            <span class="stack-chip">Цветокор</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 12. Reels #3 (Яндекс Диск) -->
+      <a href="https://disk.yandex.ru/i/_CkAzRoW1A2Y5w" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
+        <div class="thumb">
+          <span class="tag-badge">Viral Reels</span>
+          <span class="source-label">Яндекс Диск ↗</span>
+          <div class="thumb-bg">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Смотреть видеоролик</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-role">Вирусная динамика • Монтаж хука</div>
+          <div class="card-top">
+            <h3 class="card-title">Атмосферный контент для соцсетей</h3>
+            <span class="card-icon-arrow">↗</span>
+          </div>
+          <p class="card-desc">
+            Пример ролика под алгоритмы соцсетей: зацепка зрителя, высокая плотность событий на секунду хронометража и естественная подача.
+          </p>
+          <div class="card-stack">
+            <span class="stack-chip">TikTok / Reels</span>
+            <span class="stack-chip">Хук-структура</span>
+            <span class="stack-chip">Монтаж</span>
           </div>
         </div>
       </a>
 
     </div>
 
-    <!-- Стек и навыки -->
+    <!-- Навыки и стек -->
     <div class="skills-section">
-      <div class="section-headline">Инструменты & Компетенции</div>
+      <div class="section-headline">Стек & Ключевые компетенции</div>
       <div class="skills-grid">
         <div class="skill-block">
           <h4>Монтаж & Цвет</h4>
@@ -675,30 +858,30 @@
           </ul>
         </div>
         <div class="skill-block">
-          <h4>3D & Гейминг</h4>
+          <h4>3D & Съемка</h4>
           <ul>
-            <li>Blender 3D (Cycles)</li>
+            <li>Blender 3D (Cycles, Rigging)</li>
+            <li>Аэросъемка (Квадрокоптер / Дрон)</li>
+            <li>Камерная и студийная съемка</li>
             <li>Rust Asset Editor (RAE)</li>
-            <li>Cinematic Camera Rigging</li>
-            <li>OBS Studio (Запись/Стрим)</li>
           </ul>
         </div>
         <div class="skill-block">
-          <h4>Нейросети (AI)</h4>
+          <h4>AI & Новые медиа</h4>
           <ul>
-            <li>Kling AI & Runway</li>
-            <li>Google Flow / Veo</li>
-            <li>Topaz Video AI</li>
-            <li>ElevenLabs (Voiceover)</li>
+            <li>Kling AI / Runway / Veo</li>
+            <li>ElevenLabs (AI-голос)</li>
+            <li>Topaz Video AI (Апскейл)</li>
+            <li>OBS Studio (Стриминг и запись)</li>
           </ul>
         </div>
         <div class="skill-block">
-          <h4>Маркетинг & Удержание</h4>
+          <h4>YouTube & Удержание</h4>
           <ul>
-            <li>Shorts Hook (0-3 сек)</li>
-            <li>Seamless Looping</li>
-            <li>6 психо-триггеров удержания</li>
-            <li>Монтаж под TikTok / Reels</li>
+            <li>Хуки первых секунд (0–3 сек)</li>
+            <li>Seamless Looping (Бесшовный луп)</li>
+            <li>Сценарии для продаж и лидов</li>
+            <li>Дикторская озвучка видео</li>
           </ul>
         </div>
       </div>
@@ -706,17 +889,17 @@
 
     <!-- Подвал -->
     <footer>
-      <div>© 2026 Насрула Магомедов. Все права защищены.</div>
+      <div>© 2026 Насрула Магомедов. Портфолио видеомонтажера и 3D-креатора.</div>
       <div class="footer-links">
         <a href="https://t.me/che6rec" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://www.youtube.com/@mediarespawn" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://che6rec.github.io/portfolio">GitHub Pages</a>
+        <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://github.com/che6rec" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </footer>
 
   </div>
 
-  <!-- Простой скрипт фильтрации карточек -->
+  <!-- Интерактивный фильтр категорий -->
   <script>
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.project-card');
@@ -729,7 +912,8 @@
         const filter = btn.getAttribute('data-filter');
 
         cards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-cat') === filter) {
+          const categories = card.getAttribute('data-cat').split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
