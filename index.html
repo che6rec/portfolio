@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Подключение шрифта Uni Sans Heavy */
+    /* Шрифт Uni Sans Heavy */
     @font-face {
       font-family: 'Uni Sans Heavy';
       src: url('ofont.ru_Uni Sans.ttf') format('truetype');
@@ -98,7 +98,16 @@
       opacity: 0.9;
     }
 
-    /* Карусель-слайдер «Обо мне» */
+    /* Короткая подводка перед каруселью */
+    .slider-pretitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+
+    /* Карусель «Обо мне» с вертикальным свайпом */
     .slider-box {
       max-width: 780px;
       margin: 0 auto 36px;
@@ -116,7 +125,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding-bottom: 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
@@ -142,10 +151,11 @@
       font-size: 1.1rem;
     }
 
-    /* Окно слайдов */
+    /* Контейнер вертикальных слайдов */
     .slides-container {
       position: relative;
       min-height: 130px;
+      overflow: hidden;
       display: flex;
       align-items: center;
     }
@@ -155,8 +165,8 @@
       inset: 0;
       opacity: 0;
       visibility: hidden;
-      transform: translateX(20px);
-      transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+      transform: translateY(28px);
+      transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -166,7 +176,7 @@
     .slide-item.active {
       opacity: 1;
       visibility: visible;
-      transform: translateX(0);
+      transform: translateY(0);
       position: relative;
     }
 
@@ -201,12 +211,12 @@
       border-bottom-color: #c084fc;
     }
 
-    /* Навигация и контролы слайдера */
+    /* Нижняя панель: увеличенные стрелки и точки */
     .slider-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 24px;
+      margin-top: 22px;
       padding-top: 16px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
@@ -236,25 +246,26 @@
       gap: 10px;
     }
 
+    /* Увеличенные кнопки стрелок */
     .arrow-btn {
-      width: 38px;
-      height: 38px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       transition: all 0.2s ease;
     }
 
     .arrow-btn:hover {
       background: var(--accent);
       border-color: var(--accent);
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     /* Кнопки контактов */
@@ -605,7 +616,7 @@
       .projects-grid { grid-template-columns: 1fr; }
       .metrics-bar { grid-template-columns: 1fr 1fr; }
       .slider-box { padding: 22px 18px; }
-      .slides-container { min-height: 170px; }
+      .slides-container { min-height: 175px; }
       footer { flex-direction: column; text-align: center; }
     }
   </style>
@@ -614,22 +625,21 @@
 
   <div class="container">
     
-    <!-- Шапка -->
     <header>
       <h1>ПОРТФОЛИО</h1>
       <p class="intro-sub">надеюсь тебе понравится 🙈</p>
 
-      <!-- Интерактивная Карусель «Обо мне» -->
+      <p class="slider-pretitle">Кейсы чуть ниже, а пока — пару слов обо мне:</p>
+
       <div class="slider-box" id="aboutSlider">
         <div class="slider-top">
-          <span class="slide-tag" id="slideBadge">ФАКТ 01</span>
+          <span class="slide-tag" id="slideBadge">КТО Я</span>
           <div class="slider-counter">
             <span class="active-num" id="slideIndex">01</span> / 07
           </div>
         </div>
 
         <div class="slides-container" id="slidesTrack">
-          <!-- Слайд 1 -->
           <div class="slide-item active" data-tag="КТО Я">
             <h3 class="slide-title">Знакомство</h3>
             <p class="slide-desc">
@@ -637,7 +647,6 @@
             </p>
           </div>
 
-          <!-- Слайд 2 -->
           <div class="slide-item" data-tag="ОПЫТ 10+ ЛЕТ">
             <h3 class="slide-title">Кинопроизводство & Монтаж</h3>
             <p class="slide-desc">
@@ -645,7 +654,6 @@
             </p>
           </div>
 
-          <!-- Слайд 3 -->
           <div class="slide-item" data-tag="МАРКЕТИНГ">
             <h3 class="slide-title">Маркетинговый бэкграунд</h3>
             <p class="slide-desc">
@@ -653,7 +661,6 @@
             </p>
           </div>
 
-          <!-- Слайд 4 -->
           <div class="slide-item" data-tag="УДЕРЖАНИЕ >100%">
             <h3 class="slide-title">Режиссура внимания</h3>
             <p class="slide-desc">
@@ -661,7 +668,6 @@
             </p>
           </div>
 
-          <!-- Слайд 5 -->
           <div class="slide-item" data-tag="3D & CGI">
             <h3 class="slide-title">3D-графика в Blender</h3>
             <p class="slide-desc">
@@ -669,7 +675,6 @@
             </p>
           </div>
 
-          <!-- Слайд 6 -->
           <div class="slide-item" data-tag="AI ПРОДАКШН">
             <h3 class="slide-title">Генеративные нейросети</h3>
             <p class="slide-desc">
@@ -677,7 +682,6 @@
             </p>
           </div>
 
-          <!-- Слайд 7 -->
           <div class="slide-item" data-tag="СЪЕМКА & ДРОН">
             <h3 class="slide-title">Камера & Аэросъемка</h3>
             <p class="slide-desc">
@@ -687,17 +691,14 @@
         </div>
 
         <div class="slider-bottom">
-          <div class="slider-dots" id="sliderDots">
-            <!-- Точки генерируются скриптом -->
-          </div>
+          <div class="slider-dots" id="sliderDots"></div>
           <div class="slider-arrows">
-            <button class="arrow-btn" id="prevSlide" aria-label="Предыдущий слайд">←</button>
-            <button class="arrow-btn" id="nextSlide" aria-label="Следующий слайд">→</button>
+            <button class="arrow-btn" id="prevSlide" aria-label="Предыдущий слайд">↑</button>
+            <button class="arrow-btn" id="nextSlide" aria-label="Следующий слайд">↓</button>
           </div>
         </div>
       </div>
 
-      <!-- Кнопки связи -->
       <div class="hero-links">
         <a href="https://t.me/che6rec" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
@@ -710,7 +711,6 @@
       </div>
     </header>
 
-    <!-- Метрики -->
     <div class="metrics-bar">
       <div class="metric-item">
         <span class="metric-val">10+ лет</span>
@@ -730,7 +730,6 @@
       </div>
     </div>
 
-    <!-- Фильтры категорий -->
     <div class="filter-bar">
       <button class="filter-btn active" data-filter="all">Все проекты (12)</button>
       <button class="filter-btn" data-filter="youtube">YouTube-каналы</button>
@@ -739,10 +738,8 @@
       <button class="filter-btn" data-filter="production">Съемка & Дрон</button>
     </div>
 
-    <!-- Сетка проектов -->
     <div class="projects-grid">
 
-      <!-- 1. MoonQueen PS -->
       <a href="https://www.youtube.com/@MoonQueenPS" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
           <span class="tag-badge">Коммерческий YouTube</span>
@@ -770,7 +767,6 @@
         </div>
       </a>
 
-      <!-- 2. Media Respawn -->
       <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
           <span class="tag-badge">Личный медиа-бренд</span>
@@ -798,7 +794,6 @@
         </div>
       </a>
 
-      <!-- 3. MIRAGE RUST -->
       <a href="https://www.youtube.com/@MIRAGERUST" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
           <span class="tag-badge">Gaming & AI</span>
@@ -826,7 +821,6 @@
         </div>
       </a>
 
-      <!-- 4. MAGIC RUST -->
       <a href="https://www.youtube.com/@MAGICRUST" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
           <span class="tag-badge">3D & Промо</span>
@@ -854,7 +848,6 @@
         </div>
       </a>
 
-      <!-- 5. CHEBR RUST -->
       <a href="https://www.youtube.com/@CHEBRRUST/featured" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
           <span class="tag-badge">3D & YouTube</span>
@@ -882,7 +875,6 @@
         </div>
       </a>
 
-      <!-- 6. Онлайн-школа Древо Знаний -->
       <a href="https://www.youtube.com/@d.znaniy" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube production">
         <div class="thumb">
           <span class="tag-badge">EdTech Продакшн</span>
@@ -910,7 +902,6 @@
         </div>
       </a>
 
-      <!-- 7. Blender Полная сцена (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/UsrmWuEQVuPsoQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="3d-ai">
         <div class="thumb">
           <span class="tag-badge">3D CGI Showcase</span>
@@ -938,7 +929,6 @@
         </div>
       </a>
 
-      <!-- 8. База отдыха у моря (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/Ir1cHCn8Q0hahw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production reels">
         <div class="thumb">
           <span class="tag-badge">Коммерческое промо</span>
@@ -966,7 +956,6 @@
         </div>
       </a>
 
-      <!-- 9. Аэросъемка с дрона (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/uSYB2od0rmpFtQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production">
         <div class="thumb">
           <span class="tag-badge">Аэросъемка</span>
@@ -994,7 +983,6 @@
         </div>
       </a>
 
-      <!-- 10. Reels / Трендовый динамичный (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/YTf92W1nyj_4Nw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
         <div class="thumb">
           <span class="tag-badge">Instagram Reels</span>
@@ -1022,7 +1010,6 @@
         </div>
       </a>
 
-      <!-- 11. Reels #2 (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/2m17Szfj-fSSEg" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
         <div class="thumb">
           <span class="tag-badge">Short-Form Video</span>
@@ -1049,7 +1036,6 @@
         </div>
       </a>
 
-      <!-- 12. Reels #3 (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/_CkAzRoW1A2Y5w" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
         <div class="thumb">
           <span class="tag-badge">Viral Reels</span>
@@ -1078,7 +1064,6 @@
 
     </div>
 
-    <!-- Навыки и стек -->
     <div class="skills-section">
       <div class="section-headline">Стек & Ключевые компетенции</div>
       <div class="skills-grid">
@@ -1121,7 +1106,6 @@
       </div>
     </div>
 
-    <!-- Подвал -->
     <footer>
       <div>© 2026 Портфолио видеомонтажера и 3D-креатора.</div>
       <div class="footer-links">
@@ -1133,9 +1117,8 @@
 
   </div>
 
-  <!-- Скрипты: Слайдер и Фильтры -->
   <script>
-    /* Логика Карусели «Обо мне» */
+    /* Логика Карусели «Обо мне» (Вертикальная смена) */
     const slides = document.querySelectorAll('.slide-item');
     const dotsContainer = document.getElementById('sliderDots');
     const slideIndexEl = document.getElementById('slideIndex');
@@ -1187,18 +1170,26 @@
     nextBtn.addEventListener('click', nextSlideHandler);
     prevBtn.addEventListener('click', prevSlideHandler);
 
-    // Поддержка свайпов на смартфонах
-    let touchStartX = 0;
-    let touchEndX = 0;
+    // Вертикальный свайп на сенсорных экранах
+    let touchStartY = 0;
+    let touchEndY = 0;
 
     sliderBox.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
 
     sliderBox.addEventListener('touchend', e => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 45) nextSlideHandler();
-      if (touchEndX - touchStartX > 45) prevSlideHandler();
+      touchEndY = e.changedTouches[0].screenY;
+      const diffY = touchStartY - touchEndY;
+      
+      // Свайп вверх -> следующий слайд
+      if (diffY > 40) {
+        nextSlideHandler();
+      }
+      // Свайп вниз -> предыдущий слайд
+      if (diffY < -40) {
+        prevSlideHandler();
+      }
     }, { passive: true });
 
     /* Фильтрация проектов */
