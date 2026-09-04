@@ -59,7 +59,6 @@
 
     /* Uni Sans Heavy для акцентов */
     h1,
-    .metric-val,
     .card-title,
     .section-headline,
     .filter-btn,
@@ -98,7 +97,7 @@
       opacity: 0.9;
     }
 
-    /* Суженная циан-плашка без кружка */
+    /* Циан-плашка */
     .slider-pretitle {
       display: inline-block;
       padding: 5px 16px;
@@ -148,7 +147,7 @@
       letter-spacing: 0.06em;
     }
 
-    /* Контейнер вертикальных слайдов */
+    /* Контейнер слайдов */
     .slides-container {
       position: relative;
       min-height: 130px;
@@ -264,31 +263,33 @@
       transform: scale(1.08);
     }
 
-    /* Кнопки контактов */
+    /* Кнопки контактов (Telegram, Instagram, Телефон) */
     .hero-links {
       display: flex;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 45px;
+      margin-bottom: 35px;
     }
 
     .btn-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 11px 24px;
+      padding: 11px 22px;
       border-radius: 9999px;
       font-size: 0.95rem;
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.25s ease;
+      cursor: pointer;
     }
 
     .btn-primary {
       background: var(--accent);
       color: #ffffff;
       box-shadow: 0 4px 20px var(--accent-glow);
+      border: 1px solid transparent;
     }
 
     .btn-primary:hover {
@@ -305,42 +306,31 @@
 
     .btn-secondary:hover {
       background: var(--surface-hover);
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.25);
       transform: translateY(-2px);
     }
 
-    /* Метрики */
-    .metrics-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
+    /* Стильная рамка с текстом про брата Нейроутдина */
+    .disclaimer-card {
+      max-width: 780px;
+      margin: 0 auto 40px;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
       border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 50px;
-      backdrop-filter: blur(12px);
-    }
-
-    .metric-item {
+      padding: 20px 26px;
       text-align: center;
+      backdrop-filter: blur(10px);
     }
 
-    .metric-val {
-      font-size: 1.95rem;
-      color: #fff;
-      display: block;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #fff 10%, var(--cyan) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .metric-lbl {
-      font-size: 0.82rem;
+    .disclaimer-card p {
       color: var(--muted);
-      font-weight: 500;
+      font-size: 0.96rem;
+      line-height: 1.6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .disclaimer-card strong {
+      color: #fff;
     }
 
     /* Фильтры */
@@ -610,9 +600,9 @@
 
     @media (max-width: 640px) {
       .projects-grid { grid-template-columns: 1fr; }
-      .metrics-bar { grid-template-columns: 1fr 1fr; }
       .slider-box { padding: 22px 18px; }
       .slides-container { min-height: 175px; }
+      .disclaimer-card { padding: 16px 18px; }
       footer { flex-direction: column; text-align: center; }
     }
   </style>
@@ -621,22 +611,26 @@
 
   <div class="container">
     
+    <!-- Шапка -->
     <header>
       <h1>ПОРТФОЛИО</h1>
       <p class="intro-sub">надеюсь тебе понравится 🙈</p>
 
+      <!-- Компактная циан-плашка -->
       <div>
         <div class="slider-pretitle">
           Кейсы чуть ниже, а пока — пару слов обо мне:
         </div>
       </div>
 
+      <!-- Интерактивная Карусель с вертикальным свайпом -->
       <div class="slider-box" id="aboutSlider">
         <div class="slider-top">
           <span class="slide-tag" id="slideBadge">КТО Я</span>
         </div>
 
         <div class="slides-container" id="slidesTrack">
+          <!-- Слайд 1 -->
           <div class="slide-item active" data-tag="КТО Я">
             <h3 class="slide-title">Знакомство</h3>
             <p class="slide-desc">
@@ -644,6 +638,7 @@
             </p>
           </div>
 
+          <!-- Слайд 2 -->
           <div class="slide-item" data-tag="ОПЫТ 10+ ЛЕТ">
             <h3 class="slide-title">Кинопроизводство & Монтаж</h3>
             <p class="slide-desc">
@@ -651,6 +646,7 @@
             </p>
           </div>
 
+          <!-- Слайд 3 -->
           <div class="slide-item" data-tag="МАРКЕТИНГ">
             <h3 class="slide-title">Маркетинговый бэкграунд</h3>
             <p class="slide-desc">
@@ -658,6 +654,7 @@
             </p>
           </div>
 
+          <!-- Слайд 4 -->
           <div class="slide-item" data-tag="УДЕРЖАНИЕ >100%">
             <h3 class="slide-title">Режиссура внимания</h3>
             <p class="slide-desc">
@@ -665,6 +662,7 @@
             </p>
           </div>
 
+          <!-- Слайд 5 -->
           <div class="slide-item" data-tag="3D & CGI">
             <h3 class="slide-title">3D-графика в Blender</h3>
             <p class="slide-desc">
@@ -672,6 +670,7 @@
             </p>
           </div>
 
+          <!-- Слайд 6 -->
           <div class="slide-item" data-tag="AI ПРОДАКШН">
             <h3 class="slide-title">Генеративные нейросети</h3>
             <p class="slide-desc">
@@ -679,6 +678,7 @@
             </p>
           </div>
 
+          <!-- Слайд 7 -->
           <div class="slide-item" data-tag="СЪЕМКА & ДРОН">
             <h3 class="slide-title">Камера & Аэросъемка</h3>
             <p class="slide-desc">
@@ -696,37 +696,31 @@
         </div>
       </div>
 
+      <!-- Кнопки связи: Telegram, Instagram, Телефон -->
       <div class="hero-links">
         <a href="https://t.me/che6rec" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          Связаться в Telegram
+          Telegram
         </a>
-        <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>
-          YouTube-канал
+        <a href="https://www.instagram.com/che6rec/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
         </a>
+        <a href="tel:+79993113469" class="btn-pill btn-secondary" id="phoneBtn" title="Позвонить или скопировать номер">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span id="phoneText">Телефон</span>
+        </a>
+      </div>
+
+      <!-- Рамка с честным дисклеймером про брата Нейроутдина -->
+      <div class="disclaimer-card">
+        <p>
+          Тут я собрал «почти» все свои работы. Сорри что ссылками на проекты, так как я не программист и не знаю как делать, а сайт этот собрал с помощью моего брата <strong>Нейроутдина</strong> 🤖
+        </p>
       </div>
     </header>
 
-    <div class="metrics-bar">
-      <div class="metric-item">
-        <span class="metric-val">10+ лет</span>
-        <span class="metric-lbl">Опыт видеомонтажа</span>
-      </div>
-      <div class="metric-item">
-        <span class="metric-val">Full-Cycle</span>
-        <span class="metric-lbl">От идеи до готового видео</span>
-      </div>
-      <div class="metric-item">
-        <span class="metric-val">3D & AI</span>
-        <span class="metric-lbl">Blender 3D + Нейросети</span>
-      </div>
-      <div class="metric-item">
-        <span class="metric-val">FPV / Drone</span>
-        <span class="metric-lbl">Аэросъемка и режиссура</span>
-      </div>
-    </div>
-
+    <!-- Фильтры категорий -->
     <div class="filter-bar">
       <button class="filter-btn active" data-filter="all">Все проекты (12)</button>
       <button class="filter-btn" data-filter="youtube">YouTube-каналы</button>
@@ -735,8 +729,10 @@
       <button class="filter-btn" data-filter="production">Съемка & Дрон</button>
     </div>
 
+    <!-- Сетка проектов -->
     <div class="projects-grid">
 
+      <!-- 1. MoonQueen PS -->
       <a href="https://www.youtube.com/@MoonQueenPS" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
           <span class="tag-badge">Коммерческий YouTube</span>
@@ -764,6 +760,7 @@
         </div>
       </a>
 
+      <!-- 2. Media Respawn -->
       <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube">
         <div class="thumb">
           <span class="tag-badge">Личный медиа-бренд</span>
@@ -791,6 +788,7 @@
         </div>
       </a>
 
+      <!-- 3. MIRAGE RUST -->
       <a href="https://www.youtube.com/@MIRAGERUST" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
           <span class="tag-badge">Gaming & AI</span>
@@ -818,6 +816,7 @@
         </div>
       </a>
 
+      <!-- 4. MAGIC RUST -->
       <a href="https://www.youtube.com/@MAGICRUST" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
           <span class="tag-badge">3D & Промо</span>
@@ -845,6 +844,7 @@
         </div>
       </a>
 
+      <!-- 5. CHEBR RUST -->
       <a href="https://www.youtube.com/@CHEBRRUST/featured" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube 3d-ai">
         <div class="thumb">
           <span class="tag-badge">3D & YouTube</span>
@@ -872,6 +872,7 @@
         </div>
       </a>
 
+      <!-- 6. Онлайн-школа Древо Знаний -->
       <a href="https://www.youtube.com/@d.znaniy" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="youtube production">
         <div class="thumb">
           <span class="tag-badge">EdTech Продакшн</span>
@@ -899,6 +900,7 @@
         </div>
       </a>
 
+      <!-- 7. Blender Полная сцена (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/UsrmWuEQVuPsoQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="3d-ai">
         <div class="thumb">
           <span class="tag-badge">3D CGI Showcase</span>
@@ -926,6 +928,7 @@
         </div>
       </a>
 
+      <!-- 8. База отдыха у моря (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/Ir1cHCn8Q0hahw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production reels">
         <div class="thumb">
           <span class="tag-badge">Коммерческое промо</span>
@@ -953,6 +956,7 @@
         </div>
       </a>
 
+      <!-- 9. Аэросъемка с дрона (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/uSYB2od0rmpFtQ" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="production">
         <div class="thumb">
           <span class="tag-badge">Аэросъемка</span>
@@ -980,6 +984,7 @@
         </div>
       </a>
 
+      <!-- 10. Reels / Трендовый динамичный (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/YTf92W1nyj_4Nw" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
         <div class="thumb">
           <span class="tag-badge">Instagram Reels</span>
@@ -1007,6 +1012,7 @@
         </div>
       </a>
 
+      <!-- 11. Reels #2 (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/2m17Szfj-fSSEg" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
         <div class="thumb">
           <span class="tag-badge">Short-Form Video</span>
@@ -1033,6 +1039,7 @@
         </div>
       </a>
 
+      <!-- 12. Reels #3 (Яндекс Диск) -->
       <a href="https://disk.yandex.ru/i/_CkAzRoW1A2Y5w" target="_blank" rel="noopener noreferrer" class="project-card" data-cat="reels">
         <div class="thumb">
           <span class="tag-badge">Viral Reels</span>
@@ -1061,6 +1068,7 @@
 
     </div>
 
+    <!-- Навыки и стек -->
     <div class="skills-section">
       <div class="section-headline">Стек & Ключевые компетенции</div>
       <div class="skills-grid">
@@ -1103,18 +1111,41 @@
       </div>
     </div>
 
+    <!-- Подвал -->
     <footer>
       <div>© 2026 Портфолио видеомонтажера и 3D-креатора.</div>
       <div class="footer-links">
         <a href="https://t.me/che6rec" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://www.youtube.com/@media.respawn" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/che6rec/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://github.com/che6rec" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </footer>
 
   </div>
 
+  <!-- Скрипты: Слайдер, Телефон и Фильтры -->
   <script>
+    /* Логика кнопки «Телефон» */
+    const phoneBtn = document.getElementById('phoneBtn');
+    const phoneText = document.getElementById('phoneText');
+    const phoneNumber = '89993113469';
+    const formattedPhone = '8 (999) 311-34-69';
+
+    phoneBtn.addEventListener('click', (e) => {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      // Если кликают с компьютера / монитора
+      if (!isMobile && window.innerWidth > 768) {
+        e.preventDefault();
+        navigator.clipboard.writeText(phoneNumber);
+        phoneText.textContent = formattedPhone + ' (скопировано!)';
+        
+        setTimeout(() => {
+          phoneText.textContent = formattedPhone;
+        }, 2200);
+      }
+    });
+
     /* Логика Карусели «Обо мне» (Вертикальная смена) */
     const slides = document.querySelectorAll('.slide-item');
     const dotsContainer = document.getElementById('sliderDots');
@@ -1125,7 +1156,6 @@
 
     let currentSlide = 0;
 
-    // Генерация точек
     slides.forEach((_, idx) => {
       const dot = document.createElement('span');
       dot.classList.add('dot');
@@ -1165,7 +1195,7 @@
     nextBtn.addEventListener('click', nextSlideHandler);
     prevBtn.addEventListener('click', prevSlideHandler);
 
-    // Вертикальный свайп на сенсорных экранах
+    // Вертикальный свайп на смартфонах
     let touchStartY = 0;
     let touchEndY = 0;
 
@@ -1177,12 +1207,8 @@
       touchEndY = e.changedTouches[0].screenY;
       const diffY = touchStartY - touchEndY;
       
-      if (diffY > 40) {
-        nextSlideHandler();
-      }
-      if (diffY < -40) {
-        prevSlideHandler();
-      }
+      if (diffY > 40) nextSlideHandler();
+      if (diffY < -40) prevSlideHandler();
     }, { passive: true });
 
     /* Фильтрация проектов */
